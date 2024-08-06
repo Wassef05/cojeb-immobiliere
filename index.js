@@ -24,7 +24,7 @@
 // if (process.env.NODE_ENV === "local") {
 //   app.use(
 //     cors({
-//       origin: "https://cojeb-immobilier-api.vercel.app/",
+//       origin: "http://localhost:5173",
 //       credentials: true,
 //     })
 //   );
@@ -95,7 +95,7 @@
 // export const io = new Server(expressServer, {
 //   cors: {
 //     origin: [
-//       "https://cojeb-immobilier-api.vercel.app/",
+//       "http://localhost:5173",
 //       "https://property-sell.vercel.app",
 //       "https://property-sell-gjz462ec1-emoncr.vercel.app/",
 //     ],
@@ -141,11 +141,19 @@ const app = express();
 app.use(express.json());
 
 app.use(cookieParser());
+// app.use(cors({
+//   origin: process.env.NODE_ENV === "local" ? "http://localhost:5173" : "*",
+//   credentials: true,
+//   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+
+// }));
+
+const allowedOrigin = process.env.NODE_ENV === 'local' ? 'http://localhost:5173' : process.env.API_URL;
+
 app.use(cors({
-  origin: process.env.NODE_ENV === "local" ? "https://cojeb-immobilier-api.vercel.app/" : "*",
+  origin: allowedOrigin,
   credentials: true,
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-
 }));
 
 const expressServer = http.createServer(app);
@@ -194,7 +202,7 @@ app.use((err, req, res, next) => {
 const io = new Server(expressServer, {
   cors: {
     origin: [
-      "https://cojeb-immobilier-api.vercel.app/",
+      "http://localhost:5173",
       // "https://property-sell.vercel.app",
       // "https://property-sell-gjz462ec1-emoncr.vercel.app/",
     ],
