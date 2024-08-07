@@ -125,16 +125,15 @@
 // index.js
 import express from "express";
 import mongoose from "mongoose";
-import userRouter from "./api/routes/user.route.js";
-import authRouter from "./api/routes/auth.route.js";
-import projectRouter from "./api/routes/project.route.js";
-import partnerRouter from "./api/routes/partner.route.js";
+import userRouter from "./routes/user.route.js";
+import authRouter from "./routes/auth.route.js";
+import projectRouter from "./routes/project.route.js";
+import partnerRouter from "./routes/partner.route.js";
 
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import path from "path";
 import http from "http";
-import { Server } from "socket.io";
 
 // Définir les variables d'environnement directement dans le code
 const MONGO_URI = "mongodb+srv://wassef:PkJWNDPbfTkVregC@atlascluster.u9k8pq5.mongodb.net/?retryWrites=true&w=majority&appName=AtlasCluster";
