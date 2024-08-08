@@ -1,7 +1,8 @@
+// controllers/user.controller.js
 import User from "../models/user.models.js";
 import { throwError } from "../utils/error.js";
 import bcrypt from "bcrypt";
-import Projects from "../models/project.model.js"
+import Projects from "../models/project.model.js";
 
 export const getUser = async (req, res, next) => {
   try {
@@ -16,11 +17,19 @@ export const getUser = async (req, res, next) => {
   }
 };
 
+// Nouvelle méthode pour obtenir tous les utilisateurs
+export const getAllUsers = async (req, res, next) => {
+  try {
+    const users = await User.find({});
+    res.status(200).json(users);
+  } catch (error) {
+    next(throwError(404, error.message));
+  }
+};
+
 //=======update user api=======//
 export const updateUser = async (req, res, next) => {
   const { email, username } = req.body;
-  /*if (req.user.id !== req.params.id)
-    return next(throwError(401, "User Invalid"));*/
 
   const checkEmail = await User.findOne({ email });
   if (checkEmail) return next(throwError(500, "Invalid Information"));
@@ -53,8 +62,6 @@ export const updateUser = async (req, res, next) => {
 
 //=====Handle User Delete=====//
 export const deleteUser = async (req, res, next) => {
-  /*if (req.user.id !== req.params.id)
-    return next(throwError(401, "User Invalid"));*/
   try {
     await User.findByIdAndDelete(req.params.id);
     res.clearCookie("access_token");
@@ -64,13 +71,8 @@ export const deleteUser = async (req, res, next) => {
   }
 };
 
-
-
 //user projects
-
 export const userProjects = async (req, res, next) => {
-  /*if (req.user.id !== req.params.id)
-    return next(throwError(401, "You can see only your posts"));*/
   try {
     const projects = await Projects.find({ userRef: req.params.id });
     res.status(200).json(projects);

@@ -1,4 +1,3 @@
-
 // index.js
 import express from "express";
 import mongoose from "mongoose";
@@ -14,7 +13,7 @@ import http from "http";
 
 // Définir les variables d'environnement directement dans le code
 const MONGO_URI = "mongodb+srv://wassef:PkJWNDPbfTkVregC@atlascluster.u9k8pq5.mongodb.net/?retryWrites=true&w=majority&appName=AtlasCluster";
-const API_URL = "https://siteweb-immobiliere.vercel.app";
+const API_URL = "https://cojeb-immobiliere.vercel.app";
 const NODE_ENV = "production";
 const PORT = process.env.PORT || 4000;
 const JWT_SECRET = "wassef";
@@ -23,11 +22,10 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
-  // const allowedOrigin = NODE_ENV === 'local' ? 'http://localhost:5173' : API_URL;
+const allowedOrigins = NODE_ENV === 'production' ? [API_URL] : ['http://localhost:5173'];
 
-app.use(cors(
-  {
-  origin: ["*" ],
+app.use(cors({
+  origin: allowedOrigins,
   credentials: true,
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
 }));
@@ -38,9 +36,7 @@ const expressServer = http.createServer(app);
 mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("Database connected"))
   .catch(err => console.log(err));
-app.get("/",(req,res)=>{
-res.json("hello cojeb")
-});
+
 // Routes
 app.use("/api/users", userRouter);
 app.use("/api/auth", authRouter);
@@ -68,7 +64,7 @@ app.use((err, req, res, next) => {
   res.status(statusCode).json({ success: false, statusCode, message });
 });
 
-// Socket.io setup
+// Socket.io setup (commented out as per your original code)
 // const io = new Server(expressServer, {
 //   cors: {
 //     origin: [
