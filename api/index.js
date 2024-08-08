@@ -38,7 +38,9 @@ const expressServer = http.createServer(app);
 mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("Database connected"))
   .catch(err => console.log(err));
-
+app.get("/",(req,res)=>{
+res.json("hello cojeb")
+});
 // Routes
 app.use("/api/users", userRouter);
 app.use("/api/auth", authRouter);
