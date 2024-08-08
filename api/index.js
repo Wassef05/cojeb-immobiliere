@@ -1,4 +1,3 @@
-// index.js
 import express from "express";
 import mongoose from "mongoose";
 import userRouter from "./routes/user.route.js";
@@ -63,32 +62,6 @@ app.use((err, req, res, next) => {
   const message = err.message || "Internal Server Error";
   res.status(statusCode).json({ success: false, statusCode, message });
 });
-
-// Socket.io setup (commented out as per your original code)
-// const io = new Server(expressServer, {
-//   cors: {
-//     origin: [
-//       "http://localhost:5173",
-//       "https://property-sell.vercel.app",
-//       "https://property-sell-gjz462ec1-emoncr.vercel.app/",
-//     ],
-//     credentials: true,
-//   },
-// });
-
-// io.on("connection", (socket) => {
-//   console.log(`socket connected with ${socket.id}`);
-//   socket.on("join_room", (chatId) => {
-//     socket.join(chatId);
-//   });
-//   socket.on("send_message", (data) => {
-//     socket.to(data.chatId).emit("receive_message", data);
-//     socket.broadcast.emit(`${data.to}`, data);
-//   });
-//   socket.on("disconnect", () => {
-//     console.log(`user disconnected successfully ${socket.id}`);
-//   });
-// });
 
 // Start server
 expressServer.listen(PORT, () => {
