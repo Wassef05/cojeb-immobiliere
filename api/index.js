@@ -23,10 +23,11 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
-const allowedOrigin = NODE_ENV === 'local' ? 'https://cojeb-immobiliere.vercel.app' : API_URL;
+  // const allowedOrigin = NODE_ENV === 'local' ? 'http://localhost:5173' : API_URL;
 
-app.use(cors({
-  origin: allowedOrigin,
+app.use(cors(
+  {
+  origin: ["http://localhost:5173"],
   credentials: true,
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
 }));

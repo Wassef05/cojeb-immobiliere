@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://siteweb-immobiliere.vercel.app',
+        target: 'http://localhost:4000',
         secure: false,
       },
     },
