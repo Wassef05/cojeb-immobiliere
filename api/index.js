@@ -27,7 +27,7 @@ app.use(cookieParser());
 
 app.use(cors(
   {
-  origin: ["https://cojeb-immobiliere-api.vercel.app/"],
+  origin: ["*" ],
   credentials: true,
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
 }));
