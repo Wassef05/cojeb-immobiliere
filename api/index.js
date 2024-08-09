@@ -30,9 +30,13 @@ app.use(cors({
 const expressServer = http.createServer(app);
 
 // Connect to the database
-mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  serverSelectionTimeoutMS: 5000, // 5 seconds timeout
+})
   .then(() => console.log("Database connected"))
-  .catch(err => console.log(err));
+  .catch(err => console.error("Database connection error:", err));
 
 // Routes
 app.use("/api/users", userRouter);
