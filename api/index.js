@@ -11,7 +11,7 @@ import path from "path";
 import http from "http";
 
 // Définir les variables d'environnement directement dans le code
-const MONGO_URI = "mongodb+srv://wassef:PkJWNDPbfTkVregC@atlascluster.u9k8pq5.mongodb.net/?retryWrites=true&w=majority&appName=AtlasCluster";
+const MONGO_URI = "mongodb+srv://cojeb:wassef123@wassef.rjgpu.mongodb.net/?retryWrites=true&w=majority&appName=wassef";
 const API_URL = "https://cojeb-immobiliere.vercel.app";
 const NODE_ENV = "production";
 const PORT = process.env.PORT || 4000;
