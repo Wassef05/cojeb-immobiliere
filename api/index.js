@@ -9,6 +9,7 @@ import authRouter from "./routes/auth.route.js";
 import projectRouter from "./routes/project.route.js";
 import partnerRouter from "./routes/partner.route.js";
 import dotenv from "dotenv";
+import fs from 'fs';
 
 // Load environment variables from .env file
 dotenv.config();
@@ -64,17 +65,28 @@ app.use("/api/projects", projectRouter);
 app.use("/api/partners", partnerRouter);
 
 const __dirname = path.resolve();
+
 if (NODE_ENV === "production") {
   const staticFilesPath = path.join(__dirname, "client", "dist");
-  app.use(express.static(staticFilesPath));
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(staticFilesPath, "index.html"));
-  });
+
+  // Check if the static files exist before serving them
+  if (fs.existsSync(staticFilesPath)) {
+    app.use(express.static(staticFilesPath));
+    app.get("*", (req, res) => {
+      res.sendFile(path.join(staticFilesPath, "index.html"));
+    });
+  } else {
+    console.error("Static files path does not exist:", staticFilesPath);
+    app.get("*", (req, res) => {
+      res.status(404).send("Static files not found");
+    });
+  }
 } else {
   app.get("/", (req, res) => {
     res.send("API listing...");
   });
 }
+
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
