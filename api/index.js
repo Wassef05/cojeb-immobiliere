@@ -8,9 +8,13 @@ import userRouter from "./routes/user.route.js";
 import authRouter from "./routes/auth.route.js";
 import projectRouter from "./routes/project.route.js";
 import partnerRouter from "./routes/partner.route.js";
+import dotenv from "dotenv";
 
-const MONGO_URI = "mongodb+srv://cojeb:wassef123@wassef.rjgpu.mongodb.net/?retryWrites=true&w=majority&appName=wassef";
-const NODE_ENV = "production";
+// Load environment variables from .env file
+dotenv.config();
+
+const MONGO_URI = process.env.MONGO_URI;
+const NODE_ENV = process.env.NODE_ENV || "development";
 const PORT = process.env.PORT || 4000;
 
 const app = express();
@@ -39,7 +43,7 @@ mongoose.connect(MONGO_URI, {
   })
   .catch(err => console.error("Database connection error:", err));
 
-// Middleware pour vérifier la connexion à la base de données
+// Middleware to check database connection
 app.use((req, res, next) => {
   if (!isDbConnected) {
     return res.status(503).json({ success: false, message: "Database connection pending" });
