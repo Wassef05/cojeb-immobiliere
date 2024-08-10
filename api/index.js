@@ -68,7 +68,10 @@ if (NODE_ENV === "production") {
       res.sendFile(path.join(staticFilesPath, "index.html"));
     });
   } else {
-    console.error("Static files path does not exist:", staticFilesPath);
+    console.warn("Static files path does not exist. Serving fallback message.");
+    app.get("*", (req, res) => {
+      res.status(404).send("Static files not found. Please ensure your build is deployed.");
+    });
   }
 } else {
   app.get("/", (req, res) => {
