@@ -29,20 +29,25 @@ app.use(cors({
 const expressServer = http.createServer(app);
 
 // Connect to the database
+let isDbConnected = false;
+
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   serverSelectionTimeoutMS: 5000, // 5 seconds timeout
   socketTimeoutMS: 45000, // 45 seconds timeout
 })
-  .then(() => console.log("Database connected"))
+  .then(() => {
+    isDbConnected = true;
+    console.log("Database connected");
+  })
   .catch(err => console.error("Database connection error:", err));
 
-// Middleware to handle request timeouts
+// Middleware to check database connection
 app.use((req, res, next) => {
-  res.setTimeout(10000, () => { // 10 seconds timeout
-    res.status(503).json({ success: false, message: "Server timeout, please try again later" });
-  });
+  if (!isDbConnected) {
+    return res.status(503).json({ success: false, message: "Database connection pending" });
+  }
   next();
 });
 
