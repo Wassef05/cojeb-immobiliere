@@ -66,22 +66,27 @@
 
   const __dirname = path.resolve();
 
-  if (NODE_ENV === "production") {
-    // Chemin corrigé pour Vercel
-    const staticFilesPath = path.join(__dirname, "..", "client", "dist");
-  
-    if (fs.existsSync(staticFilesPath)) {
-      app.use(express.static(staticFilesPath));
-      app.get("*", (req, res) => {
-        res.sendFile(path.join(staticFilesPath, "index.html"));
-      });
-    } else {
-      console.error("Le chemin d'accès du fichier statique n'existe pas :", staticFilesPath);
-      app.get("*", (req, res) => {
-        res.status(404).send("Fichiers statiques non trouvés");
-      });
-    }
+if (NODE_ENV === "production") {
+  // Chemin corrigé pour pointer directement vers le bon dossier
+  const staticFilesPath = path.join(__dirname, "..", "client", "dist");
+
+  if (fs.existsSync(staticFilesPath)) {
+    app.use(express.static(staticFilesPath));
+    app.get("*", (req, res) => {
+      res.sendFile(path.join(staticFilesPath, "index.html"));
+    });
+  } else {
+    console.error("Le chemin d'accès du fichier statique n'existe pas :", staticFilesPath);
+    app.get("*", (req, res) => {
+      res.status(404).send("Fichiers statiques non trouvés");
+    });
   }
+} else {
+  app.get("/", (req, res) => {
+    res.send("API listing...");
+  });
+}
+
   
 
 
