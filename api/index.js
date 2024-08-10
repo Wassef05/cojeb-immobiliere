@@ -60,27 +60,26 @@ app.use("/api/auth", authRouter);
 app.use("/api/projects", projectRouter);
 app.use("/api/partners", partnerRouter);
 
+// Deployment settings
 const __dirname = path.resolve();
-
-if (NODE_ENV === "production") {
-  const staticFilesPath = path.join(__dirname, "..", "client", "dist");
-
-  if (fs.existsSync(staticFilesPath)) {
-    app.use(express.static(staticFilesPath));
-    app.get("*", (req, res) => {
-      res.sendFile(path.join(staticFilesPath, "index.html"));
-    });
-  } else {
-    console.error("Le chemin d'accès du fichier statique n'existe pas :", staticFilesPath);
-    app.get("*", (req, res) => {
-      res.status(404).send("Fichiers statiques non trouvés");
-    });
-  }
+if (process.env.NODE_ENV === "production") {
+  const staticFilesPath = path.join(__dirname,"..", "client", "dist");
+  app.use(express.static(staticFilesPath));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(staticFilesPath, "index.html"));
+  });
 } else {
   app.get("/", (req, res) => {
     res.send("API listing...");
   });
 }
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  const statusCode = err.statusCode || 500;
+  const message = err.message || "Internal Server Error";
+  res.status(statusCode).json({ success: false, statusCode, message });
+});
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
