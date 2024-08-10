@@ -4,19 +4,24 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import path from "path";
 import http from "http";
-import fs from 'fs'; // Importation du module fs
 import userRouter from "./routes/user.route.js";
 import authRouter from "./routes/auth.route.js";
 import projectRouter from "./routes/project.route.js";
 import partnerRouter from "./routes/partner.route.js";
 import dotenv from "dotenv";
 
-// Charger les variables d'environnement depuis le fichier .env
+// Load environment variables from .env file
 dotenv.config();
 
 const MONGO_URI = process.env.MONGO_URI;
 const NODE_ENV = process.env.NODE_ENV || "development";
 const PORT = process.env.PORT || 4000;
+
+// Check if required environment variables are defined
+if (!MONGO_URI) {
+  console.error("MONGO_URI is not defined in the .env file.");
+  process.exit(1);
+}
 
 const app = express();
 app.use(express.json());
@@ -35,8 +40,8 @@ let isDbConnected = false;
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  serverSelectionTimeoutMS: 30000, // 30 secondes
-  socketTimeoutMS: 120000, // 2 minutes
+  serverSelectionTimeoutMS: 30000, //30sec
+  socketTimeoutMS: 120000, //2min
 })
   .then(() => {
     isDbConnected = true;
@@ -44,7 +49,7 @@ mongoose.connect(MONGO_URI, {
   })
   .catch(err => console.error("Database connection error:", err));
 
-// Middleware pour vérifier la connexion à la base de données
+// Middleware to check database connection
 app.use((req, res, next) => {
   if (!isDbConnected) {
     return res.status(503).json({ success: false, message: "Database connection pending" });
@@ -59,27 +64,18 @@ app.use("/api/projects", projectRouter);
 app.use("/api/partners", partnerRouter);
 
 const __dirname = path.resolve();
-const staticFilesPath = path.join(__dirname, "client", "dist");
-
 if (NODE_ENV === "production") {
-  if (fs.existsSync(staticFilesPath)) {
-    app.use(express.static(staticFilesPath));
-    app.get("*", (req, res) => {
-      res.sendFile(path.join(staticFilesPath, "index.html"));
-    });
-  } else {
-    console.warn("Static files path does not exist. Serving fallback message.");
-    app.get("*", (req, res) => {
-      res.status(404).send("Static files not found. Please ensure your build is deployed.");
-    });
-  }
+  const staticFilesPath = path.join(__dirname, "client", "dist");
+  app.use(express.static(staticFilesPath));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(staticFilesPath, "index.html"));
+  });
 } else {
   app.get("/", (req, res) => {
     res.send("API listing...");
   });
 }
 
-// Middleware pour gérer les erreurs
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
   const message = err.message || "Internal Server Error";
