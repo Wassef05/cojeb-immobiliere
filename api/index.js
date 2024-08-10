@@ -4,23 +4,19 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import path from "path";
 import http from "http";
+import fs from 'fs'; // Importation du module fs
 import userRouter from "./routes/user.route.js";
 import authRouter from "./routes/auth.route.js";
 import projectRouter from "./routes/project.route.js";
 import partnerRouter from "./routes/partner.route.js";
 import dotenv from "dotenv";
-import fs from 'fs';
 
+// Charger les variables d'environnement depuis le fichier .env
 dotenv.config();
 
 const MONGO_URI = process.env.MONGO_URI;
 const NODE_ENV = process.env.NODE_ENV || "development";
 const PORT = process.env.PORT || 4000;
-
-if (!MONGO_URI) {
-  console.error("MONGO_URI is not defined in the .env file.");
-  process.exit(1);
-}
 
 const app = express();
 app.use(express.json());
@@ -39,8 +35,8 @@ let isDbConnected = false;
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  serverSelectionTimeoutMS: 30000,
-  socketTimeoutMS: 120000,
+  serverSelectionTimeoutMS: 30000, // 30 secondes
+  socketTimeoutMS: 120000, // 2 minutes
 })
   .then(() => {
     isDbConnected = true;
@@ -48,6 +44,7 @@ mongoose.connect(MONGO_URI, {
   })
   .catch(err => console.error("Database connection error:", err));
 
+// Middleware pour vérifier la connexion à la base de données
 app.use((req, res, next) => {
   if (!isDbConnected) {
     return res.status(503).json({ success: false, message: "Database connection pending" });
@@ -55,32 +52,31 @@ app.use((req, res, next) => {
   next();
 });
 
+// Routes
 app.use("/api/users", userRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/projects", projectRouter);
 app.use("/api/partners", partnerRouter);
 
-// Deployment settings
 const __dirname = path.resolve();
-if (process.env.NODE_ENV === "production") {
-  const staticFilesPath = path.join(__dirname,"..", "client", "dist");
-  app.use(express.static(staticFilesPath));
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(staticFilesPath, "index.html"));
-  });
+const staticFilesPath = path.join(__dirname,"..", "client", "dist");
+
+if (NODE_ENV === "production") {
+  if (fs.existsSync(staticFilesPath)) {
+    app.use(express.static(staticFilesPath));
+    app.get("*", (req, res) => {
+      res.sendFile(path.join(staticFilesPath, "index.html"));
+    });
+  } else {
+    console.error("Static files path does not exist:", staticFilesPath);
+  }
 } else {
   app.get("/", (req, res) => {
     res.send("API listing...");
   });
 }
 
-// Error handling middleware
-app.use((err, req, res, next) => {
-  const statusCode = err.statusCode || 500;
-  const message = err.message || "Internal Server Error";
-  res.status(statusCode).json({ success: false, statusCode, message });
-});
-
+// Middleware pour gérer les erreurs
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
   const message = err.message || "Internal Server Error";
