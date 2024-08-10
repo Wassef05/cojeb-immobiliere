@@ -20,7 +20,6 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
-
 app.use(cors({
   origin: ["https://cojeb-immobiliere.vercel.app"],
   credentials: true,
@@ -34,9 +33,18 @@ mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   serverSelectionTimeoutMS: 5000, // 5 seconds timeout
+  socketTimeoutMS: 45000, // 45 seconds timeout
 })
   .then(() => console.log("Database connected"))
   .catch(err => console.error("Database connection error:", err));
+
+// Middleware to handle request timeouts
+app.use((req, res, next) => {
+  res.setTimeout(10000, () => { // 10 seconds timeout
+    res.status(503).json({ success: false, message: "Server timeout, please try again later" });
+  });
+  next();
+});
 
 // Routes
 app.use("/api/users", userRouter);
@@ -63,6 +71,16 @@ app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
   const message = err.message || "Internal Server Error";
   res.status(statusCode).json({ success: false, statusCode, message });
+});
+
+// Handle graceful shutdown
+process.on('SIGINT', async () => {
+  console.log('Shutting down server...');
+  await mongoose.disconnect();
+  expressServer.close(() => {
+    console.log('Server closed');
+    process.exit(0);
+  });
 });
 
 // Start server
