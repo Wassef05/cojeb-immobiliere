@@ -148,6 +148,12 @@ mongoose
   })
   .catch((err) => console.error("Database connection error:", err));
 
+// // Routes
+app.use("/api/users", userRouter);
+app.use("/api/auth", authRouter);
+app.use("/api/projects", projectRouter);
+app.use("/api/partners", partnerRouter);
+
 // Middleware to check database connection
 app.use((req, res, next) => {
   if (!isDbConnected) {
