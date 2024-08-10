@@ -4,13 +4,14 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import path from "path";
 import http from "http";
+import fs from 'fs'; // Importation du module fs
 import userRouter from "./routes/user.route.js";
 import authRouter from "./routes/auth.route.js";
 import projectRouter from "./routes/project.route.js";
 import partnerRouter from "./routes/partner.route.js";
 import dotenv from "dotenv";
 
-// Load environment variables from .env file
+// Charger les variables d'environnement depuis le fichier .env
 dotenv.config();
 
 const MONGO_URI = process.env.MONGO_URI;
@@ -34,8 +35,8 @@ let isDbConnected = false;
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  serverSelectionTimeoutMS: 5000,
-  socketTimeoutMS: 45000,
+  serverSelectionTimeoutMS: 30000, // 30 secondes
+  socketTimeoutMS: 120000, // 2 minutes
 })
   .then(() => {
     isDbConnected = true;
@@ -43,7 +44,7 @@ mongoose.connect(MONGO_URI, {
   })
   .catch(err => console.error("Database connection error:", err));
 
-// Middleware to check database connection
+// Middleware pour vérifier la connexion à la base de données
 app.use((req, res, next) => {
   if (!isDbConnected) {
     return res.status(503).json({ success: false, message: "Database connection pending" });
@@ -58,18 +59,24 @@ app.use("/api/projects", projectRouter);
 app.use("/api/partners", partnerRouter);
 
 const __dirname = path.resolve();
+const staticFilesPath = path.join(__dirname, "client", "dist");
+
 if (NODE_ENV === "production") {
-  const staticFilesPath = path.join(__dirname, "client", "dist");
-  app.use(express.static(staticFilesPath));
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(staticFilesPath, "index.html"));
-  });
+  if (fs.existsSync(staticFilesPath)) {
+    app.use(express.static(staticFilesPath));
+    app.get("*", (req, res) => {
+      res.sendFile(path.join(staticFilesPath, "index.html"));
+    });
+  } else {
+    console.error("Static files path does not exist:", staticFilesPath);
+  }
 } else {
   app.get("/", (req, res) => {
     res.send("API listing...");
   });
 }
 
+// Middleware pour gérer les erreurs
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
   const message = err.message || "Internal Server Error";
