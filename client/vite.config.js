@@ -13,4 +13,16 @@ export default defineConfig({
   },
 
   plugins: [react()],
+
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'], // Example: move react and react-dom to a separate chunk
+          // Add other modules here as needed
+        },
+      },
+    },
+    chunkSizeWarningLimit: 1000, // Increase the limit to 1000 kB
+  },
 });
