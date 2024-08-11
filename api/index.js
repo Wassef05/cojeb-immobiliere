@@ -102,6 +102,7 @@ import userRouter from "./routes/user.route.js";
 import authRouter from "./routes/auth.route.js";
 import projectRouter from "./routes/project.route.js";
 import partnerRouter from "./routes/partner.route.js";
+import { fileURLToPath } from 'url';
 
 // Charger les variables d'environnement depuis le fichier .env
 dotenv.config();
@@ -213,13 +214,14 @@ app.post("/api/heavy-task", async (req, res, next) => {
     next(err);
   }
 });
+// Solution pour __dirname dans un module ES
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-// Gérer les fichiers statiques pour la production
-const __dirname = path.resolve();
+// Chemin statique mis à jour pour Vercel
+const staticFilesPath = path.join(__dirname, "dist");
 
 if (NODE_ENV === "production") {
-  const staticFilesPath = path.join(__dirname, "client", "dist");
-
   if (fs.existsSync(staticFilesPath)) {
     app.use(express.static(staticFilesPath));
     app.get("*", (req, res) => {
