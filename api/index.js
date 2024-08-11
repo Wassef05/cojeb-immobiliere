@@ -219,7 +219,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Chemin statique mis à jour pour Vercel
-const staticFilesPath = path.join(__dirname, "dist");
+const staticFilesPath = path.join(__dirname, "..","client","dist");
 
 if (NODE_ENV === "production") {
   if (fs.existsSync(staticFilesPath)) {
