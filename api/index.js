@@ -126,7 +126,7 @@ let isDbConnected = false;
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  serverSelectionTimeoutMS: 30000, // 30 secondes
+  serverSelectionTimeoutMS: 60000, // 30 secondes
   socketTimeoutMS: 120000, // 2 minutes
 })
   .then(() => {
@@ -150,7 +150,7 @@ app.use("/api/projects", projectRouter);
 app.use("/api/partners", partnerRouter);
 
 const __dirname = path.resolve();
-const staticFilesPath = path.join(__dirname, "client", "dist");
+const staticFilesPath = path.join(__dirname, "..","client", "dist");
 
 if (NODE_ENV === "production") {
   if (fs.existsSync(staticFilesPath)) {
@@ -159,13 +159,17 @@ if (NODE_ENV === "production") {
       res.sendFile(path.join(staticFilesPath, "index.html"));
     });
   } else {
-    console.error("Static files path does not exist:", staticFilesPath);
+    console.warn("Static files path does not exist. Serving fallback message.");
+    app.get("*", (req, res) => {
+      res.status(404).send("Static files not found. Please ensure your build is deployed.");
+    });
   }
 } else {
   app.get("/", (req, res) => {
     res.send("API listing...");
   });
 }
+
 
 // Middleware pour gérer les erreurs
 app.use((err, req, res, next) => {
