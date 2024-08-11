@@ -95,27 +95,27 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import path from "path";
 import http from "http";
+import fs from "fs";
+import dotenv from "dotenv";
+import NodeCache from "node-cache";
 import userRouter from "./routes/user.route.js";
 import authRouter from "./routes/auth.route.js";
 import projectRouter from "./routes/project.route.js";
 import partnerRouter from "./routes/partner.route.js";
-import dotenv from "dotenv";
-import fs from "fs";
-import NodeCache from "node-cache";
 
-// Load environment variables from .env file
+// Charger les variables d'environnement depuis le fichier .env
 dotenv.config();
 
 const MONGO_URI = process.env.MONGO_URI;
 const NODE_ENV = process.env.NODE_ENV || "development";
 const PORT = process.env.PORT || 4000;
 
-// Initialize cache (with a 5-minute default TTL)
+// Initialiser le cache (avec un TTL par défaut de 5 minutes)
 const cache = new NodeCache({ stdTTL: 300 });
 
-// Check if required environment variables are defined
+// Vérifier si les variables d'environnement requises sont définies
 if (!MONGO_URI) {
-  console.error("MONGO_URI is not defined in the .env file.");
+  console.error("MONGO_URI n'est pas défini dans le fichier .env.");
   process.exit(1);
 }
 
@@ -144,25 +144,25 @@ mongoose
   })
   .then(() => {
     isDbConnected = true;
-    console.log("Database connected");
+    console.log("Connexion à la base de données réussie");
   })
-  .catch((err) => console.error("Database connection error:", err));
+  .catch((err) => console.error("Erreur de connexion à la base de données :", err));
 
-// // Routes
+// Routes
 app.use("/api/users", userRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/projects", projectRouter);
 app.use("/api/partners", partnerRouter);
 
-// Middleware to check database connection
+// Middleware pour vérifier la connexion à la base de données
 app.use((req, res, next) => {
   if (!isDbConnected) {
-    return res.status(503).json({ success: false, message: "Database connection pending" });
+    return res.status(503).json({ success: false, message: "Connexion à la base de données en attente" });
   }
   next();
 });
 
-// Middleware to check cache
+// Middleware pour vérifier le cache
 const cacheMiddleware = (req, res, next) => {
   const key = req.originalUrl || req.url;
   const cachedResponse = cache.get(key);
@@ -178,7 +178,7 @@ const cacheMiddleware = (req, res, next) => {
   }
 };
 
-// Example of route with pagination and cache
+// Exemple de route avec pagination et cache
 app.get("/api/projects", cacheMiddleware, async (req, res, next) => {
   try {
     const page = parseInt(req.query.page) || 1;
@@ -200,25 +200,25 @@ app.get("/api/projects", cacheMiddleware, async (req, res, next) => {
   }
 });
 
-// Example of a route that handles heavy tasks asynchronously
+// Exemple de route qui gère les tâches lourdes de manière asynchrone
 app.post("/api/heavy-task", async (req, res, next) => {
   try {
-    res.json({ success: true, message: "Task started. You'll be notified once it's done." });
-    // Start the heavy task asynchronously
+    res.json({ success: true, message: "La tâche a commencé. Vous serez notifié une fois terminée." });
+    // Démarrer la tâche lourde de manière asynchrone
     setImmediate(async () => {
       await performHeavyTask(req.body);
-      console.log("Heavy task completed");
+      console.log("Tâche lourde terminée");
     });
   } catch (err) {
     next(err);
   }
 });
 
+// Gérer les fichiers statiques pour la production
 const __dirname = path.resolve();
 
 if (NODE_ENV === "production") {
-  // Chemin corrigé pour Vercel
-  const staticFilesPath = path.join(__dirname, "..", "client", "dist");
+  const staticFilesPath = path.join(__dirname, "client", "dist");
 
   if (fs.existsSync(staticFilesPath)) {
     app.use(express.static(staticFilesPath));
@@ -233,15 +233,15 @@ if (NODE_ENV === "production") {
   }
 }
 
-// Error handling middleware
+// Middleware de gestion des erreurs
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
-  const message = err.message || "Internal Server Error";
+  const message = err.message || "Erreur interne du serveur";
   res.status(statusCode).json({ success: false, statusCode, message });
 });
 
 expressServer.listen(PORT, () => {
-  console.log(`Server running at port ${PORT}`);
+  console.log(`Serveur en cours d'exécution sur le port ${PORT}`);
 });
 
 export default () => expressServer;
