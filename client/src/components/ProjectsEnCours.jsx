@@ -111,10 +111,10 @@ const EnCoursProjects = () => {
       >
         <div className="content">
           <h2
-            className="text-3xl font-bold sm:text-5xl font-heading text-[#515557] sm:text-left"
+            className="text-3xl  sm:text-5xl font-bold  text-[#515557] sm:text-left "
             data-aos="fade-down"
           >
-            Nos Projets En Cours
+            NOS PROJETS EN COURS
           </h2>
         </div>
 

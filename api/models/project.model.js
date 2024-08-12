@@ -18,24 +18,17 @@ const ProjectSchema = new mongoose.Schema(
       required: true,
       type: Number,
     },
-    price: {
-      required: true,
-      type: Number,
-    },
-    discountPrice: {
-      type: Number,
-    },
     furnished: {
+      required: true,
+      type: Boolean,
+    },
+    bureau: {
       required: true,
       type: Boolean,
     },
     parking: {
       required: true,
       type: Boolean,
-    },
-    type: {
-      type: String,
-      required: true,
     },
     imgUrl: {
       type: Array,
@@ -47,8 +40,8 @@ const ProjectSchema = new mongoose.Schema(
     },
     etat: {
       type: String,
-      enum: ['not started', 'en cours', 'terminee'],
-      default: 'not started',
+      enum: ['en cours', 'terminee'],
+
     },
   },
   { timestamps: true }

@@ -122,14 +122,12 @@ const ProjectCard = ({ projectInfo }) => {
     address,
     etat,
     description,
-    discountPrice,
     furnished,
     imgUrl,
     parking,
-    price,
     title,
-    type,
     _id,
+    bureau,
     area
   } = projectInfo.project;
 
@@ -177,7 +175,11 @@ const ProjectCard = ({ projectInfo }) => {
             </p>
             <p className="text-[#3A5A40] w-1/2 font-content font-semibold text-sm flex items-center">
               <FaCheck className={`mr-1 mt-[2px] ${furnished ? 'text-green-600' : 'text-gray-400'}`} />
-              Meublé
+              Espace Comercial
+            </p>
+            <p className="text-[#3A5A40] w-1/2 font-content font-semibold text-sm flex items-center">
+              <FaCheck className={`mr-1 mt-[2px] ${bureau ? 'text-green-600' : 'text-gray-400'}`} />
+              Bureau
             </p>
           </div>
           <div className="mt-3 flex items-end justify-between">

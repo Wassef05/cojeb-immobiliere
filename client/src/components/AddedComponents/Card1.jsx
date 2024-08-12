@@ -11,7 +11,7 @@ export default function Card1() {
   return (
     <div>
       <div 
-        className="bg-[#E6EEF3] shadow-lg shadow-gray-500/40 sm:mt-10 mt-2 h-auto grid place-items-center max-h-full max-w-[100vw] sm:pt-40 mx-auto sm:p-32 p-6 font-[sans-serif]"
+        className="bg-[#E6EEF3] shadow-lg shadow-gray-500/40 sm:mt-10 mt-20 h-auto grid place-items-center max-h-full max-w-[100vw] sm:pt-40 mx-auto sm:p-32 p-6 font-[sans-serif]"
         data-aos="fade-up"
       >
         <div className="grid md:grid-cols-2 items-center gap-6">
@@ -22,7 +22,7 @@ export default function Card1() {
           >
             <img
               src={cov}
-              className="rounded-lg sm:w-2/3 md:w-3/4 shadow-lg shadow-gray-900/70"
+              className="rounded-lg sm:w-2/3 md:w-[300px] lg:w-[500px] shadow-lg shadow-gray-900/70"
               alt="Profile"
               data-aos="fade-right"
               data-aos-delay="400"
@@ -35,13 +35,13 @@ export default function Card1() {
           >
             <div className="mb-12 sm:max-w-[50vw]">
               <h2 
-                className="text-[#EB5E1A] text-5xl font-extrabold mb-16"
+                className="text-[#EB5E1A] text-2xl sm:text-4xl font-extrabold mb-16"
                 data-aos="fade-down"
               >
                 A PROPOS DE NOUS
               </h2>
               <p 
-                className="text-gray-900 text-2xl leading-loose text-justify"
+                className="text-gray-900  text-lg sm:text-xl leading-loose text-justify"
                 data-aos="fade-up"
                 data-aos-delay="800"
               >

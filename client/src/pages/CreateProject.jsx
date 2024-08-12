@@ -183,16 +183,7 @@ const CreateProject = () => {
                                         />
                                         {errors.address && <p className='text-gray-800 text-xs font-semibold'>{errors.address.message}</p>}
 
-                                        <input
-                                            id='type'
-                                            type="text"
-                                            placeholder='Type'
-                                            name='type'
-
-                                            className='form_input border-[1px]  focus:border-[#3A5A40] rounded-md placeholder:text-sm mt-3'
-                                            {...register('type', { required: 'This feild is required*' })}
-                                        />
-                                        {errors.type && <p className='text-gray-800 text-xs font-semibold'>{errors.type.message}</p>}
+                                        
                                         
                                     </div>
 
@@ -274,69 +265,25 @@ const CreateProject = () => {
                                                         className="checkbox w-5 h-5 border-gray-400 rounded-full checked:bg-[#3A5A40]"
                                                         {...register('furnished')}
                                                     />
-                                                    <span className="label-text font-medium" >Meublé</span>
+                                                    <span className="label-text font-medium" >Espace Comercial</span>
                                                 </label>
-
                                                 <label className="label cursor-pointer flex items-center justify-start gap-2">
                                                     <input
-                                                        id='offer'
+                                                        id='bureau'
                                                         type="checkbox"
+                                                        name='bureau'
                                                         className="checkbox w-5 h-5 border-gray-400 rounded-full checked:bg-[#3A5A40]"
-                                                        {...register('offer')}
-                                                        onChange={() => setIsoffer(!isOffer)}
+                                                        {...register('bureau')}
                                                     />
-                                                    <span className="label-text font-medium" >Avez-vous un offre?</span>
+                                                    <span className="label-text font-medium" >Bureau</span>
                                                 </label>
+
+                                                
                                             </div>
                                         </div>
 
 
-                                        <div className=" mt-1">
-                                            <div className="pricing_info flex flex-col">
-                                                <p className="mt-3  font-heading text-black">Regular Price </p>
-                                                <span className='text-sm font-content font-bold text-red-900'>(DT /Appartement)</span>
-                                                <div className="flex flex-row mt-2 ">
-                                                    <span className="flex items-center bg-grey-lighter rounded rounded-r-none px-2 font-bold text-grey-darker text-xl">DT</span>
-                                                    <input
-                                                        id='price'
-                                                        type="number"
-                                                        name="price"
-                                                        className="bg-slate-100 p-2 rounded-md text-grey-darkest border-2 focus:border-[#3A5A40] font-bold text-gray-800 text-lg max-w-[200px]"
-                                                        {...register('price', { required: 'This feild is required*' })}
-                                                    />
-
-                                                </div>
-                                                {errors.price && <p className='text-gray-800 text-xs font-semibold'>{errors.price.message}</p>}
-                                            </div>
-                                            {
-                                                isOffer &&
-                                                <div className="pricing_info flex flex-col">
-                                                    <p className="mt-3  font-heading text-black">Discount Price </p>
-                                                    <span className='text-sm font-content font-bold text-red-900'>($ /month)</span>
-                                                    <div className="flex flex-row mt-2 ">
-                                                        <span className="flex items-center bg-grey-lighter rounded rounded-r-none px-2 font-bold text-grey-darker text-xl">$</span>
-                                                        <input
-                                                            id='discountPrice'
-                                                            type="number"
-                                                            name="discountPrice"
-                                                            className="bg-slate-100 p-2 rounded-md text-grey-darkest border-2 focus:border-[#3A5A40] font-bold text-gray-800 text-lg max-w-[200px]"
-                                                            {...register('discountPrice', {
-                                                                required: 'This feild is required*',
-                                                                validate: (value) => {
-                                                                    const { price } = getValues();
-                                                                    if (+price < +value) {
-                                                                        return '*Discount price should be lower than regular price'
-                                                                    }
-                                                                }
-                                                            })}
-                                                        />
-
-                                                    </div>
-                                                    {errors.discountPrice && <p className='text-gray-800 text-xs font-semibold'>{errors.discountPrice.message}</p>}
-                                                </div>
-                                            }
-                                        </div>
-
+                                       
                                     </div>
                                 </div>
 

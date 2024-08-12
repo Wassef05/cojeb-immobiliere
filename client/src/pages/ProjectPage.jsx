@@ -22,7 +22,7 @@ const ProjectPage = () => {
     const [isFeatureActive, setIsFeatureActive] = useState(false)
     const [loading, setLoading] = useState(false)
 
-    const { area, address, bath, bed, description, discountPrice, furnished, offer, parking, price, title, type, _id, userRef } = listings;
+    const { area, address, bath, bed, description, bureau, furnished, offer, parking, title, type, _id, userRef } = listings;
 
     const navigate = useNavigate()
     const params = useParams();
@@ -145,9 +145,9 @@ const ProjectPage = () => {
                                 listings.imgUrl && listings.imgUrl.map((listing, index) => (
                                     <div
                                         key={index}
-                                        className="h-[300px] sm:h-[750px] w-full mx-auto z-10"
+                                        className="w-full mx-auto z-10"
                                     >
-                                        <img className='object-contain  mx-auto rounded-lg rounded-b-lg' src={listing} alt="image" />
+                                        <img className='h-[200px] sm:h-[450px]  mx-auto rounded-lg rounded-b-lg' src={listing} alt="image" />
                                     </div>
                                 ))
                             }
@@ -184,18 +184,7 @@ const ProjectPage = () => {
                                                     </p>
                                                 </div>
 
-                                                {
-                                                    offer ?
-                                                        <p className='text-2xl font-heading text-[#3A5A40] mt-5  text-bold'>
-                                                            {discountPrice} DT <span>
-                                                                <s className='text-gray-400 text-sm'>{price} DT</s>
-                                                            </span>
-                                                        </p>
-                                                        :
-                                                        <p className='text-2xl font-heading text-[#3A5A40] mt-3  text-bold'>
-                                                            {price} DT
-                                                        </p>
-                                                }
+                                                
                                             </div>
 
 
@@ -242,11 +231,21 @@ const ProjectPage = () => {
                                                     </div>
                                                     <div className="grid grid-cols-2 mt-2">
                                                         <p className='font-heading text-md lg:text-lg '>
-                                                            Meublé
+                                                            Espace Comercial
                                                         </p>
                                                         <p className={`font-heading ${furnished ? "text-green-600" : "text-gray-400"}  text-md lg:text-lg capitalize`}>
                                                             {
                                                                 furnished ? "Yes" : 'No'
+                                                            }
+                                                        </p>
+                                                    </div>
+                                                    <div className="grid grid-cols-2 mt-2">
+                                                        <p className='font-heading text-md lg:text-lg '>
+                                                            Bureau
+                                                        </p>
+                                                        <p className={`font-heading ${bureau ? "text-green-600" : "text-gray-400"}  text-md lg:text-lg capitalize`}>
+                                                            {
+                                                                bureau ? "Yes" : 'No'
                                                             }
                                                         </p>
                                                     </div>
