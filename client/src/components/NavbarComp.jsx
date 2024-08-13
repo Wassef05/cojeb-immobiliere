@@ -3,7 +3,7 @@ import { Navbar } from "flowbite-react";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 
-import logo from '../img/logo1.png';
+import logo from '../img/logo.png';
 import Hamburger from '../img/hamburgerMenu.svg';
 import Close from '../img/close.svg';
 
@@ -13,6 +13,8 @@ export default function NavbarComp() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [lastScrollPosition, setLastScrollPosition] = useState(0);
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
+  const [isHovered, setIsHovered] = useState(false);
+
 
   const handleToggle = () => {
     setToggle(!toggle);
@@ -39,28 +41,19 @@ export default function NavbarComp() {
     };
   }, [lastScrollPosition]);
 
-  const navlinkStyles = "text-white font-bold text-md sm:text-lg md:text-sm lg:text-lg  md:mx-1 lg:mx-4 my-3 hover:text-[#3A5A40] transform translate-y-2";
+  const navlinkStyles = "text-black font-bold text-md sm:text-lg md:text-sm lg:text-xl  md:mx-1 lg:mx-8 my-3 hover:text-[#3A5A40] transform translate-y-2";
 
   return (
     <Navbar
       fluid
       rounded
-      className={`fixed top-0 left-0 right-0 rounded-lg justify-between w-full z-50 bg-[#6F6A6A]/70 transition-transform duration-300 ${
-        scrollPosition > 0 ? (isNavbarVisible ? 'translate-y-0' : '-translate-y-full') : 'mt-8'
+      className={`fixed top-0 left-0 right-0 rounded-lg justify-between w-full z-50 bg-transparent transition-transform duration-300 ${
+        scrollPosition > 0 ? (isNavbarVisible ? 'translate-y-0 bg-white/50 ' : '-translate-y-full ') : 'mt-0'
       }`}
     >
       <div className={`flex flex-wrap rounded-lg md:flex-nowrap pb-6 w-full items-center justify-between`}>
-        {/* <Navbar.Brand href="/">
-          <img
-            src={logo}
-            className={`fixed mr-3 sm:h-36 lg:h-48 ml-20 transition-transform duration-300 ${
-              scrollPosition > 0 ? (isNavbarVisible ? 'translate-y-0' : '-translate-y-full') : 'mt-0'
-            }`}
-            alt="nom"
-          />
-        </Navbar.Brand> */}
         <Navbar.Brand href="/">
-          <img src={logo} className={`fixed mr-3 h-36  mt-12 sm:h-36 md:h-40 lg:h-44 ml-6 transition-transform duration-300  ${
+          <img src={logo} className={`fixed mr-3 h-20  mt-6 sm:h-36 md:h-40 lg:h-24 ml-6 transition-transform duration-300  ${
         scrollPosition > 0 ? (isNavbarVisible ? 'translate-y-0' : '-translate-y-full') : 'mt-0'
       }`} alt="nom" />
         </Navbar.Brand>
@@ -91,18 +84,51 @@ export default function NavbarComp() {
           >
             A PROPOS
           </NavLink>
-          <NavLink
+          <div
             className={navlinkStyles}
-            to="/searchProject?filter=terminee"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
           >
-            NOS PROJETS REALISES
-          </NavLink>
-          <NavLink
-            className={navlinkStyles}
-            to="/searchProject?filter=en cours"
-          >
-            NOS PROJETS EN COURS
-          </NavLink>
+            <div className="cursor-pointer inline-flex  items-center">
+              NOS PROJETS
+              <svg
+                className="w-2.5 h-2.5 ml-2"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="m1 1 4 4 4-4"
+                />
+              </svg>
+            </div>
+            {isHovered && (
+              <div className="z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-72 dark:bg-gray-700 absolute">
+                <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
+                  <li>
+                    <a href="/searchProject?filter=future" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                      Nos Projet Non Réalisées
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/searchProject?filter=en cours" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                      Nos Projet En Cours De Réalisation
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/searchProject?filter=terminee" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                      Nos Projet Terminées
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            )}
+          </div>
           <NavLink
             className={navlinkStyles}
             to="/contact"

@@ -188,11 +188,7 @@ const ProjectPage = () => {
                                             </div>
 
 
-                                            <div className="property_genarel_info grid-cols-3 grid max-w-md">
-                                                <p className='font-heading mt-3 font-medium sm:text-lg text-sm flex items-center justify-left'><BiSolidArea className='text-[#3A5A40]' />
-                                                    <span className='ml-1'>{area} m²</span>
-                                                </p>
-                                            </div>
+                                            
 
                                         </div>
 
@@ -251,10 +247,10 @@ const ProjectPage = () => {
                                                     </div>
                                                     <div className="grid grid-cols-2 mt-2">
                                                         <p className='font-heading text-md lg:text-lg '>
-                                                            Aire
+                                                            Appartements
                                                         </p>
                                                         <p className='font-heading  text-md lg:text-lg '>
-                                                            {area} <span>m²</span>
+                                                            {area} 
                                                         </p>
                                                     </div>
                                                     {

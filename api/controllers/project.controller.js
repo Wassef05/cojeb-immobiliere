@@ -82,6 +82,7 @@ export const getListingProjects = async (req, res, next) => {
     const etat = req.query.etat || "";
     const parking = req.query.parking || "";
     const furnished = req.query.furnished || "";
+    const bureau = req.query.bureau || "";
     const page = req.query.page || 1;
 
     const query = {
@@ -100,6 +101,9 @@ export const getListingProjects = async (req, res, next) => {
     }
     if (furnished === "true") {
       query.furnished = true;
+    }
+    if (bureau === "true") {
+      query.bureau = true;
     }
 
     const limit = 12;

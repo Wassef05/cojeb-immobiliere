@@ -9,9 +9,9 @@ export default function Card1() {
   }, []);
 
   return (
-    <div>
+    <div className="bg-[#E6EEF3]">
       <div 
-        className="bg-[#E6EEF3] shadow-lg shadow-gray-500/40 sm:mt-10 mt-20 h-auto grid place-items-center max-h-full max-w-[100vw] sm:pt-40 mx-auto sm:p-32 p-6 font-[sans-serif]"
+        className="bg-[#E6EEF3] shadow-lg shadow-gray-500/40  h-auto grid place-items-center max-h-full max-w-[100vw] sm:pt-40 mx-auto sm:p-32 p-6 font-[sans-serif]"
         data-aos="fade-up"
       >
         <div className="grid md:grid-cols-2 items-center gap-6">

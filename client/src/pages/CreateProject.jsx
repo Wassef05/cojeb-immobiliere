@@ -141,7 +141,7 @@ const CreateProject = () => {
     return (
         <main >
             <section id='admin'>
-            <div className="w-full h-32  rounded-lg"></div>                <div className="container py-7 md:py-16 max-w-5xl">
+            <div className="w-full h-24  rounded-lg"></div>                <div className="container py-7 md:py-16 max-w-5xl">
                     <h1 className='text-center text-2xl font-heading font-bold text-black'>Créer un Projet</h1>
                     <div className="mt-8 form_container">
                         <form onSubmit={handleSubmit(handleFormSubmit)}>
@@ -194,6 +194,19 @@ const CreateProject = () => {
                                             <p className='font-heading text-black'>Selectionner l'etat </p>
                                             
                                             <div className="form-control ">
+                                            <label className="label cursor-pointer flex items-center justify-start gap-2
+                                            ">
+                                                    <input
+                                                        type="radio"
+                                                        name="rent"
+                                                        id='rent'
+                                                        value={'future'}
+                                                        required
+                                                        className="radio w-5 h-5 checked:bg-[#3A5A40]"
+                                                        {...register('etat')}
+                                                    />
+                                                    <span className="label-text font-medium">Future</span>
+                                                </label>
                                                 <label className="label cursor-pointer flex items-center justify-start gap-2
                                             ">
                                                     <input
@@ -227,10 +240,10 @@ const CreateProject = () => {
                                         <div className="cd_info mt-3">
                                             <p className='font-heading text-black'> Informations Genareles</p>
                                             <div className="max-w-[200px] flex items-center justify-between gap-2 mt-2">
-                                                <span className='label-text font-medium'>Aire <small>(m²)</small></span>
+                                                <span className='label-text font-medium'>Appartement</span>
                                                 <div>
                                                     <input
-                                                        defaultValue={550}
+                                                        defaultValue={20}
                                                         className='border-2 focus:border-[#3A5A40] rounded-md max-w-[84px] py-1 px-2 bg-transparent'
                                                         type="number"
                                                         name="area"

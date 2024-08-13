@@ -40,7 +40,7 @@ const ProjectSchema = new mongoose.Schema(
     },
     etat: {
       type: String,
-      enum: ['en cours', 'terminee'],
+      enum: ['en cours', 'terminee',"future"],
 
     },
   },

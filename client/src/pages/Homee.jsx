@@ -9,6 +9,7 @@ import Carousel from "../components/AddedComponents/Carousel"
 import TermineeProjects from "../components/ProjectsTermines";
 import EnCoursProjects from "../components/ProjectsEnCours";
 import StateCard from "../components/AddedComponents/StateCardAbout";
+import ProjetFuture from "../components/ProjetFuture";
 import { useEffect } from 'react'
 
 
@@ -18,10 +19,11 @@ function Homee() {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <div className="App">
+    <div className="App ">
       <HomeHeader/>
       <div>
         <Card1/>
+        <ProjetFuture/>
         <TermineeProjects/>
         <EnCoursProjects/> 
         <Card2/>

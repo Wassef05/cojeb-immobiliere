@@ -27,6 +27,9 @@ body {
 .Toastify__toast {
   @apply bg-brand-blue;
 }
+.transition-opacity {
+  transition: opacity 1s ease-in-out;
+}
 .Toastify__toast-body {
   @apply text-white;
 }

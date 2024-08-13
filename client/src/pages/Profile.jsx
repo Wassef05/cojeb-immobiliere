@@ -118,6 +118,7 @@ const Profile = () => {
     parking: false,
     etat: "all",
     furnished: false,
+    bureau: false,
   });
   const dispatch = useDispatch();
   const handleSubmit1 = (e) => {
@@ -128,6 +129,7 @@ const Profile = () => {
       parking: false,
       etat: "all",
       furnished: false,
+      bureau: false,
     });
   };
   const handleChange1 = (name, value) => {
@@ -270,7 +272,7 @@ const Profile = () => {
     try {
       setUserProjectLoading(true);
       const res = await fetch(
-        `/api/projects/search?searchTerm=${searchTermState}&etat=${formState.etat}&parking=${formState.parking}&furnished=${formState.furnished}&page=${pageCount}`
+        `/api/projects/search?searchTerm=${searchTermState}&etat=${formState.etat}&parking=${formState.parking}&furnished=${formState.furnished}&bureau=${formState.bureau}&page=${pageCount}`
       );
       const data = await res.json();
       if (data.success === false) {
@@ -517,8 +519,8 @@ const Profile = () => {
                   {/*search*/}
                   <div className="">
                     <form /*onSubmit={handleSubmit1}*/>
-                      <div className="grid grid-cols-3">
-                        <div className="col-span-1">
+                      <div className="grid grid-cols-6">
+                        <div className="col-span-2">
                           <p className="text-lg font-heading "> type:</p>
                           <div className="flex flex-col lg:flex-row justify-between pr-10  pt-2">
                             <div>
@@ -542,6 +544,21 @@ const Profile = () => {
                                   className="h-4 w-4 mr-1 accent-[#3A5A40]"
                                   type="radio"
                                   name="etat"
+                                  value={"future"}
+                                  onChange={(e) =>
+                                    handleChange1(e.target.name, e.target.value)
+                                  }
+                                  checked={formState.etat === "future"}
+                                />
+                                Future
+                              </label>
+                            </div>
+                            <div>
+                              <label className="flex items-center justify-start text-md font-heading">
+                                <input
+                                  className="h-4 w-4 mr-1 accent-[#3A5A40]"
+                                  type="radio"
+                                  name="etat"
                                   value={"en cours"}
                                   onChange={(e) =>
                                     handleChange1(e.target.name, e.target.value)
@@ -551,7 +568,7 @@ const Profile = () => {
                                 En Cours
                               </label>
                             </div>
-                            <div>
+                            <div >
                               <label className="flex items-center justify-start text-md font-heading">
                                 <input
                                   className="h-4 w-4 mr-1 accent-[#3A5A40]"
@@ -568,7 +585,7 @@ const Profile = () => {
                             </div>
                           </div>
                         </div>
-                        <div>
+                        <div className='col-span-3'>
                           <p className="text-lg font-heading">Amenities:</p>
                           <div className="flex flex-col lg:flex-row justify-between pr-10 pt-2">
                             <div className="mr-5">
@@ -602,7 +619,24 @@ const Profile = () => {
                                   }
                                   checked={formState.furnished}
                                 />
-                                Meublées
+                                Espace Comercial
+                              </label>
+                            </div>
+                            <div>
+                              <label className="flex items-center justify-start text-lg font-heading">
+                                <input
+                                  className="h-4 w-4 mr-1 accent-[#3A5A40]"
+                                  type="checkbox"
+                                  name="bureau"
+                                  onChange={(e) =>
+                                    handleChange1(
+                                      e.target.name,
+                                      e.target.checked
+                                    )
+                                  }
+                                  checked={formState.bureau}
+                                />
+                                Bureau
                               </label>
                             </div>
                           </div>

@@ -22,6 +22,7 @@ const SearchProject = () => {
         parking: false,
         etat: "all",
         furnished: false,
+        bureau:false,
 
     })
     const dispatch = useDispatch()
@@ -33,22 +34,17 @@ const SearchProject = () => {
             parking: false,
             etat: "all",
             furnished: false,
+            bureau:false,
 
         })
     }
 
-    useEffect(() => {
-        const params = new URLSearchParams(location.search);
-        const filter = params.get('filter');
-        if (filter) {
-            setFormState(prevState => ({ ...prevState, etat: filter }));
-        }
-    }, [location.search]);
+    
 
     const fetchListings = async () => {
         try {
             setLoading(true)
-            const res = await fetch(`/api/projects/search?searchTerm=${searchTermState}&etat=${formState.etat}&parking=${formState.parking}&furnished=${formState.furnished}&page=${pageCount}`)
+            const res = await fetch(`/api/projects/search?searchTerm=${searchTermState}&etat=${formState.etat}&parking=${formState.parking}&furnished=${formState.furnished}&bureau=${formState.bureau}&page=${pageCount}`)
             const json = await res.json();
             if (json.success === false) {
                 setLoading(false)
@@ -65,6 +61,13 @@ const SearchProject = () => {
     useEffect(() => {
         fetchListings();
     }, [formState, searchTermState, pageCount]);
+    useEffect(() => {
+        const params = new URLSearchParams(location.search);
+        const filter = params.get('filter');
+        if (filter) {
+            setFormState(prevState => ({ ...prevState, etat: filter }));
+        }
+    }, [location.search]);
 
 
     const handleChange = (name, value) => {
@@ -122,6 +125,18 @@ const SearchProject = () => {
                                                         <input
                                                             className='h-4 w-4 mr-1 accent-[#3A5A40]' type="radio"
                                                             name="etat"
+                                                            value={"future"}
+                                                            onChange={(e) => handleChange(e.target.name, e.target.value)}
+                                                            checked={formState.etat === "future"}
+                                                        />
+                                                        Future
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <label className="flex items-center justify-start text-md font-heading">
+                                                        <input
+                                                            className='h-4 w-4 mr-1 accent-[#3A5A40]' type="radio"
+                                                            name="etat"
                                                             value={"en cours"}
                                                             onChange={(e) => handleChange(e.target.name, e.target.value)}
                                                             checked={formState.etat === "en cours"}
@@ -167,7 +182,18 @@ const SearchProject = () => {
                                                                 onChange={(e) => handleChange(e.target.name, e.target.checked)}
                                                                 checked={formState.furnished}
                                                             />
-                                                            Meublées
+                                                            Espace Comercial
+                                                        </label>
+                                                    </div>
+                                                    <div>
+                                                        <label className="flex items-center justify-start text-lg font-heading">
+                                                            <input
+                                                                className='h-4 w-4 mr-1 accent-[#3A5A40]' type="checkbox"
+                                                                name="bureau"
+                                                                onChange={(e) => handleChange(e.target.name, e.target.checked)}
+                                                                checked={formState.bureau}
+                                                            />
+                                                            Bureau
                                                         </label>
                                                     </div>
 
