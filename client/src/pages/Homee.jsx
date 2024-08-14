@@ -23,9 +23,9 @@ function Homee() {
       <HomeHeader/>
       <div>
         <Card1/>
-        <ProjetFuture/>
         <TermineeProjects/>
         <EnCoursProjects/> 
+        <ProjetFuture/>
         <Card2/>
         <Card3/>
         <Carousel/>

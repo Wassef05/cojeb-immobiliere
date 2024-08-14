@@ -109,10 +109,10 @@ const TermineeProjects = () => {
       >
         <div className="content">
           <h2
-            className="text-3xl font-bold sm:text-5xl font-heading  text-[#515557] sm:text-left "
+            className="text-3xl font-bold sm:text-3xl font-heading  text-[#515557] sm:text-left "
             data-aos="fade-down"
           >
-            NOS PROJETS REALISES
+            NOS PROJETS REALISÉS
           </h2>
         </div>
 

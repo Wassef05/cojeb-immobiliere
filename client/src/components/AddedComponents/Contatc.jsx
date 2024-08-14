@@ -8,15 +8,15 @@ export default function Contact() {
   return (
     <div>
       <h1 className="text-[#3A5A40] pt-10 text-3xl font-bold sm:ml-[13%] mb-8">
-        CONTACT NOUS{" "}
+        CONTACT{" "}
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full text-center justify-center items-center">
 
         <div class=" py-3.5 text-base w-[50vw] md:w-[35vw] lg:w-[17vw] m-auto mt-6  h-[130px]  bg-[#2D7A71]   rounded-3xl ">
           <img src={iemail} className="w-10 h-8 m-auto mb-1"/>
           <div className="col-span-4 text-center font-bold">
-            <h3 className="text-white">E-mail</h3>
-            <p className="text-black">cogebimmobiliere@gmail.com</p>
+            <h3 className="text-white ">E-mail</h3>
+            <p className="text-black">cogebimmobiliere@ <br></br>gmail.com</p>
           </div>
         </div>
 

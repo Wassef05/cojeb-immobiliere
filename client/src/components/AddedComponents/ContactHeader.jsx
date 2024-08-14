@@ -75,7 +75,7 @@
 import  { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import cover from "../../img/cover3.jpg";
+import cover from "../../img/LCC.jpg";
 import { Breadcrumb } from "flowbite-react";
 import { HiHome } from "react-icons/hi";
 import iemail from "../../img/iemailwhite.png"
@@ -113,7 +113,7 @@ export default function ContactHeader() {
               icon={() => <HiHome className="text-white text-xl mr-2" />}
               className="text-white"
             >
-              <div className="text-white text-xl">Home</div>
+              <div className="text-white text-xl">Accueil</div>
             </Breadcrumb.Item>
             <Breadcrumb.Item className="text-white">
               <div className="text-white text-xl">Contact</div>
