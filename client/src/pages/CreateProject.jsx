@@ -310,11 +310,14 @@ const CreateProject = () => {
                                         </p>
                                     <div className="image_upload_container md:p-5 md:border-2 bg-transparent border-dashed rounded-sm md:flex items-center justify-center gap-2">
 
-                                        <input
+                                     <input
                                             onChange={(e) => setImageFile(e.target.files)}
                                             required
-                                            multiple accept='image/*' type="file"
-                                            className={`file-input file:bg-[#3A5A40] bg-red-00 ${loading ? "md:w-4/6" : 'md:w-4/5'} w-full`} />
+                                            multiple 
+                                            accept="video/mp4, image/*"
+                                            type="file"
+                                            className={`file-input file:bg-[#3A5A40] ${loading ? "md:w-4/6" : 'md:w-4/5'} w-full`} 
+                                     />
                                         <button
                                             disabled={loading || imageFile.length === 0}
                                             onClick={handleImageUpload}

@@ -146,7 +146,7 @@ const ProjectCard = ({ projectInfo }) => {
         />
         <div className="absolute bottom-3 left-3 inline-flex items-center rounded-sm bg-[#3A5A40] px-2 py-1 shadow-md">
           <span className="text-xs text-white uppercase font-heading">
-            {etat === 'not started' ? 'Non démarré' : etat === 'en cours' ? 'En cours' : etat === 'terminee' ? 'Terminé' : ''}
+            {etat === 'future' ? 'Future' : etat === 'en cours' ? 'En cours' : etat === 'terminee' ? 'Terminé' : ''}
           </span>
         </div>
         <div className="absolute bottom-3 right-3 inline-flex items-center rounded-sm px-2 py-1">

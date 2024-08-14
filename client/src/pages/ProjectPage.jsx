@@ -80,7 +80,6 @@ const ProjectPage = () => {
     }
 
     const settings = {
-        dots: true,
         infinite: true,
         lazyLoad: false,
         speed: 500,
@@ -122,6 +121,16 @@ const ProjectPage = () => {
             })
         }
     }
+    function removeLastNCharacters(url, numChars) {
+        if (typeof url === 'string' && url.length > numChars) {
+            return url.slice(0, -numChars);
+        }
+        return url; // Return original URL if it's shorter than or equal to numChars
+    }
+    function isMp4(fileName) {
+        console.log(fileName)
+        return fileName.endsWith('.mp4');
+    }
 
 
    
@@ -147,7 +156,12 @@ const ProjectPage = () => {
                                         key={index}
                                         className="w-full mx-auto z-10"
                                     >
-                                        <img className='h-[200px] sm:h-[450px]  mx-auto rounded-lg rounded-b-lg' src={listing} alt="image" />
+                                        {isMp4(removeLastNCharacters(listing,53))?
+                                        <video className='h-[200px] sm:h-[450px]  mx-auto rounded-lg rounded-b-lg' src={listing} alt="video" autoPlay="true" muted="true" loop="true"/>
+                                        :
+                                        <img className='h-[200px] sm:h-[450px]  mx-auto rounded-lg rounded-b-lg' src={listing} alt="image"  />
+                                        
+                                        }
                                     </div>
                                 ))
                             }

@@ -244,6 +244,19 @@ const UpdateProject = () => {
                                             <p className='font-heading text-black'>Selectionner l'etat </p>
                                             
                                             <div className="form-control ">
+                                            <label className="label cursor-pointer flex items-center justify-start gap-2
+                                            ">
+                                                    <input
+                                                        type="radio"
+                                                        name="rent"
+                                                        id='rent'
+                                                        value={'future'}
+                                                        required
+                                                        className="radio w-5 h-5 checked:bg-[#3A5A40]"
+                                                        {...register('etat')}
+                                                    />
+                                                    <span className="label-text font-medium">Future</span>
+                                                </label>
                                                 <label className="label cursor-pointer flex items-center justify-start gap-2
                                             ">
                                                     <input
@@ -348,7 +361,7 @@ const UpdateProject = () => {
                                                 <input
                                                     onChange={(e) => setImageFile(e.target.files)}
                                                     required={formData.imgUrl < 1}
-                                                    multiple accept='image/*' type="file"
+                                                    multiple  accept="video/mp4, image/*" type="file"
                                                     className={`file-input file:bg-[#3A5A40] bg-red-00 ${loading ? "md:w-4/6" : 'md:w-4/5'} w-full`} />
                                                 <button
                                                     disabled={loading}
