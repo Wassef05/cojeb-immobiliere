@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { HiHome } from "react-icons/hi";
 import axios from 'axios';
-import cover from "../../img/contact_cover.jpg";
+import cover from "../../img/cover1.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Breadcrumb } from "flowbite-react";
@@ -95,18 +95,18 @@ const AboutHeader = () => {
 
   return (
     <div>
-      <div className="relative h-[80vh] font-sans before:absolute before:w-full before:h-full before:inset-0 before:bg-[#0B4F48] before:opacity-50 before:z-10">
+      <div className="relative h-[80vh] font-sans before:absolute before:w-full before:h-full before:inset-0  before:opacity-50 before:z-10">
         <img
           src={cover}
           alt="contact cover"
           className="absolute inset-0 w-full h-full object-cover"
         />
 
-        <div className="min-h-[350px] relative z-20 h-full max-w-6xl mx-auto flex flex-col justify-center items-center text-center text-white p-6" data-aos="fade-down">
+        <div className="min-h-[350px] relative z-20 h-full max-w-6xl mx-auto flex flex-col justify-center items-center text-center text-black p-6" data-aos="fade-down">
           <h2 className="sm:text-4xl uppercase text-3xl font-bold mb-6">
             A propos
           </h2>
-          <Breadcrumb
+          {/* <Breadcrumb
             className="text-white"
             aria-label="Default breadcrumb example"
           >
@@ -115,12 +115,12 @@ const AboutHeader = () => {
               icon={() => <HiHome className="text-white text-xl mr-2" />}
               className="text-white"
             >
-              <div className="text-white text-xl">Home</div>
+              <div className="text-white text-xl">Accueil</div>
             </Breadcrumb.Item>
             <Breadcrumb.Item className="text-white">
               <div className="text-white text-xl">A propos</div>
             </Breadcrumb.Item>
-          </Breadcrumb>
+          </Breadcrumb> */}
         </div>
       </div>
       <div className="grid items-center justify-center -mt-10 mb-14 mx-auto max-w-[70vw] sm:max-w-[80vw] lg:grid-cols-3 gap-4 z-20 relative lg:left-16 max-lg:px-4">

@@ -112,7 +112,7 @@ const EnCoursProjects = () => {
       >
         <div className="content">
           <h2
-            className="text-3xl  sm:text-5xl font-bold  text-[#515557] sm:text-left "
+            className="text-xl  sm:text-3xl font-bold  text-[#515557] sm:text-left "
             data-aos="fade-down"
           >
             NOS PROJETS EN COURS

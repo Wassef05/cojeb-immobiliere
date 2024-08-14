@@ -4,7 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import cover1 from "../../img/cover1.jpg"
 import cover2 from "../../img/cover2.jpg"
-import cover3 from "../../img/cover3.jpg"
+import cover3 from "../../img/cover1.png"
 
 
 const slides = [

@@ -17,10 +17,10 @@ export default function Card2() {
               className="mb-12 sm:max-w-[50vw]"
               data-aos="fade-right"
             >
-              <h2 className="text-white mb-8 text-5xl font-extrabold">
-                L'OBJECTIF DE SOCIETE
+              <h2 className="text-white mb-8 text-4xl font-extrabold">
+                OBJECTIF DE LA SOCIETE
               </h2>
-              <p className="text-white text-justify font-sans text-xl leading-10">
+              <p className="text-white text-justify font-sans text-xl leading-6">
                 La société COGEB IMMOBILIERE a pour objectif le développement des activités de la promotion immobilière, à travers une sélection de sites, une conception réfléchie et un produit de qualité. Elle offre à ses clients des espaces d'habitations, de commerce, professionnel ou administratif de haut standing qui répondent à leurs perspectives et qui contribuent à l'amélioration de leur cadre de vie. Notre société est entourée d'une équipe pluridisciplinaire extrêmement compétente (architectes, bureaux d'études, bureaux de contrôle...), qui a toujours accordé une attention particulière à l'architecture de ses bâtiments dont plusieurs font aujourd'hui figure de référence. COGEB IMMOBILIERE réalise des programmes immobiliers neufs en tenant compte des critères suivants :
               </p>
             </div>
@@ -30,7 +30,7 @@ export default function Card2() {
           >
             <img
               src={cov}
-              className="lg:h-[500px] grid place-items-center sm:ml-8 rounded-3xl shadow-[25px_-25px_0px_rgba(45,122,113,1)]"
+              className="lg:h-[400px] grid place-items-center sm:ml-8 rounded-3xl shadow-[25px_-25px_0px_rgba(45,122,113,1)]"
               alt="Profile"
             />
           </div>

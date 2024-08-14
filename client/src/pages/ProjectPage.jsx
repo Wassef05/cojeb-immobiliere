@@ -22,7 +22,7 @@ const ProjectPage = () => {
     const [isFeatureActive, setIsFeatureActive] = useState(false)
     const [loading, setLoading] = useState(false)
 
-    const { area, address, bath, bed, description, bureau, furnished, offer, parking, title, type, _id, userRef } = listings;
+    const { area, address, bath, bed, description, bureau,Appartements, furnished, offer, parking, title, type, _id, userRef } = listings;
 
     const navigate = useNavigate()
     const params = useParams();
@@ -235,7 +235,7 @@ const ProjectPage = () => {
                                                         </p>
                                                         <p className={`font-heading ${parking ? "text-green-600" : "text-gray-400"}  text-md lg:text-lg capitalize`}>
                                                             {
-                                                                parking ? "Yes" : 'No'
+                                                                parking ? "oui" : 'Non'
                                                             }
                                                         </p>
                                                     </div>
@@ -245,7 +245,7 @@ const ProjectPage = () => {
                                                         </p>
                                                         <p className={`font-heading ${furnished ? "text-green-600" : "text-gray-400"}  text-md lg:text-lg capitalize`}>
                                                             {
-                                                                furnished ? "Yes" : 'No'
+                                                                furnished ? "OUI" : 'Non'
                                                             }
                                                         </p>
                                                     </div>
@@ -255,16 +255,29 @@ const ProjectPage = () => {
                                                         </p>
                                                         <p className={`font-heading ${bureau ? "text-green-600" : "text-gray-400"}  text-md lg:text-lg capitalize`}>
                                                             {
-                                                                bureau ? "Yes" : 'No'
+                                                                bureau ? "Oui" : 'Non'
                                                             }
                                                         </p>
                                                     </div>
-                                                    <div className="grid grid-cols-2 mt-2">
+                                                    {/* <div className="grid grid-cols-2 mt-2">
                                                         <p className='font-heading text-md lg:text-lg '>
                                                             Appartements
                                                         </p>
-                                                        <p className='font-heading  text-md lg:text-lg '>
-                                                            {area} 
+                                                        <p className={`font-heading ${Appartements ? "text-green-600" : "text-gray-400"}  text-md lg:text-lg capitalize`}>
+                                                            {
+                                                                Appartements ? "Oui" : 'Non'
+                                                            }
+                                                        </p>
+                                                        
+                                                    </div> */}
+                                                    <div className="grid grid-cols-2 mt-2">
+                                                        <p className='font-heading text-md lg:text-lg '>
+                                                        Appartements
+                                                        </p>
+                                                        <p className={`font-heading ${furnished ? "text-green-600" : "text-gray-400"}  text-md lg:text-lg capitalize`}>
+                                                            {
+                                                                furnished ? "OUI" : 'Non'
+                                                            }
                                                         </p>
                                                     </div>
                                                     {
@@ -344,7 +357,7 @@ const ProjectPage = () => {
                                                     </div>
                                                     <div className="grid grid-cols-2 mt-2">
                                                         <p className='font-heading text-md lg:text-lg '>
-                                                            Aire
+                                                        Appartements
                                                         </p>
                                                         <p className='font-heading  text-md lg:text-lg '>
                                                             {area} <span>m²</span>

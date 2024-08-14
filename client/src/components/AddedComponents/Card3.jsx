@@ -12,7 +12,7 @@ export default function Card3() {
         <div className="min-h-[350px] relative z-30 h-max-h-72 max-w-6xl mx-auto flex flex-col justify-center items-center text-center text-white p-6 rounded-lg">
         <p className="sm:text-2xl text-base text-center text-white">NOTRE DERNIER PROJET</p>
 
-          <h2 className="sm:text-5xl pt-4 text-white text-2xl font-bold mb-2">VOUS POUVEZ DECOUVRIR AVEC NOUS 
+          <h2 className="sm:text-4xl pt-4 text-white text-2xl font-bold mb-2">VOUS POUVEZ DECOUVRIR AVEC NOUS 
           LES DERNIERS PROJETS REALISE </h2>
           
           <button
