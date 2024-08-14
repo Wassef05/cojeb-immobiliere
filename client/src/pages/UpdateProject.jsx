@@ -290,7 +290,7 @@ const UpdateProject = () => {
                                                 <div className="property_info mt-3">
                                                     <p className='font-heading text-black'>Genarel Information</p>
                                                     <div className="max-w-[200px] flex items-center justify-between gap-2 mt-2">
-                                                        <span className='label-text font-medium'>Area <small>(sqft)</small></span>
+                                                        <span className='label-text font-medium'>Appartements </span>
                                                         <div>
                                                             <input
                                                                 defaultValue={550}

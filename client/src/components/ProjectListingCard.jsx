@@ -27,11 +27,11 @@ const ProjectListingCard = ({ project }) => {
 
 
     return (
-        <div className="listing_card bg-transparant  rounded-lg w-full  group sm:mr-auto sm:ml-0 mx-auto"
+        <div className="listing_card bg-transparant  rounded-lg w-full  group sm:mr-auto sm:ml-0 mx-auto shadow-lg shadow-gray-900"
         onClick={() => navigate(`/projects/${_id}`) }>
             <div className="card-container">
                 <div
-                    className="image_container relative overflow-hidden cursor-pointer p-2"
+                    className="image_container relative overflow-hidden h-80 cursor-pointer items-center p-2"
                     
                 >
                     <img
@@ -39,7 +39,7 @@ const ProjectListingCard = ({ project }) => {
                         src={imgUrl[0]} alt="property image"
                     />
                 </div>
-                <div className="card_body  duration-500 mt-3   ">
+                <div className="card_body  duration-500 mt-3 h-32  ">
                     <div
                         className="content-container p-3 pb-0 cursor-pointer"
                     >

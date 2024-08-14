@@ -270,16 +270,22 @@ const ProjectPage = () => {
                                                         </p>
                                                         
                                                     </div> */}
-                                                    <div className="grid grid-cols-2 mt-2">
-                                                        <p className='font-heading text-md lg:text-lg '>
-                                                        Appartements
-                                                        </p>
-                                                        <p className={`font-heading ${furnished ? "text-green-600" : "text-gray-400"}  text-md lg:text-lg capitalize`}>
-                                                            {
-                                                                furnished ? "OUI" : 'Non'
-                                                            }
-                                                        </p>
-                                                    </div>
+                                                    {area===0?
+                                                    <></>
+                                                    :
+                                                         <div className="grid grid-cols-2 mt-2">
+                                                         <p className='font-heading text-md lg:text-lg '>
+                                                         Appartements
+                                                         </p>
+                                                         <p className={`font-heading ${furnished ? "text-green-600" : "text-gray-400"}  text-md lg:text-lg capitalize`}>
+                                                             {
+                                                                 area
+                                                             }
+                                                         </p>
+                                                     </div>
+
+                                                    }
+                                                   
                                                     {
                                                         offer &&
                                                         <div className="grid grid-cols-2 mt-2">

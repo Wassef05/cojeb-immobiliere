@@ -185,7 +185,7 @@ const ProjectCard = ({ projectInfo }) => {
           <div className="mt-3 flex items-end justify-between">
             <div className="inline-flex rounded-xl max-w-[150px] duration-500">
               <p className="font-heading text-lg truncate">
-                {area ? area : 0} <span className="font-content">m²</span>
+                {area ? area : 0}  <span className="font-content"> appartements</span>
               </p>
             </div>
           </div>

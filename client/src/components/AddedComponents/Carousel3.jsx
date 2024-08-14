@@ -97,7 +97,7 @@ const Projects = () => {
                 className="mx-auto max-w-screen-xl  space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8"
             >
                 <div className="content">
-                    <h2 className='text-3xl  sm:text-5xl font-bold  text-[#515557] sm:text-left '>
+                    <h2 className='text-xl  sm:text-3xl font-bold  text-[#515557] sm:text-left '>
                         NOS PROJETS
                     </h2>
                 </div>
