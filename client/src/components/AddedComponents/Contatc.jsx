@@ -32,7 +32,7 @@ export default function Contact() {
         <img src={iwebsite} className="w-8 h-8 m-auto mb-1"/>
           <div className="col-span-4 text-center font-bold">
             <h3 className="text-white">Site Web</h3>
-            <p className="text-black">Cojeb/immobiliére.com</p>
+            <p className="text-black">Cojeb-immobiliére.com</p>
           </div>
         </div>
 
