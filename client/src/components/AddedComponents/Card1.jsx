@@ -34,12 +34,19 @@ export default function Card1() {
             data-aos-delay="600"
           >
             <div className="mb-12 sm:max-w-[50vw]">
-              <h2 
-                className="text-[#EB5E1A] text-2xl sm:text-4xl font-extrabold mb-16"
-                data-aos="fade-down"
-              >
-                A PROPOS DE NOUS
-              </h2>
+             <h2
+  className="text-[#EB5E1A] text-2xl sm:text-4xl font-extrabold mb-16 font-poppins tracking-wide"
+  data-aos="fade-down"
+>
+  A PROPOS DE NOUS
+</h2>
+{/* <h2
+  className="text-[#EB5E1A] text-2xl sm:text-4xl font-bold mb-16 font-lora tracking-wide shadow-lg shadow-gray-800"
+  style={{ WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}
+  data-aos="fade-down"
+>
+  A PROPOS DE NOUS
+</h2> */}
               <p 
                 className="text-gray-900  text-lg sm:text-xl leading-loose text-justify"
                 data-aos="fade-up"

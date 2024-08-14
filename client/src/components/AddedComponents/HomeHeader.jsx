@@ -2,8 +2,8 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import cover1 from "../../img/cover1.JPG"
-import cover2 from "../../img/cover2.JPG"
+import cover1 from "../../img/cover1.jpg"
+import cover2 from "../../img/cover2.jpg"
 import cover3 from "../../img/cover3.jpg"
 
 
@@ -16,11 +16,11 @@ const slides = [
 export default function HomeHeader() {
   const settings = {
     infinite: true,
-    speed: 500,
+    speed: 1500,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3500,
     pauseOnHover: false,  // Prevents pausing on hover
     pauseOnFocus: false, 
 
@@ -34,7 +34,7 @@ export default function HomeHeader() {
             <div key={index} className="w-full h-full">
               <div
                 className="w-full h-screen bg-center bg-no-repeat bg-cover"
-                style={{ backgroundImage: `url(${slide})`, backgroundSize: '70%' }}
+                style={{ backgroundImage: `url(${slide})`, backgroundSize: '75%' }}
               ></div>
             </div>
           ))}

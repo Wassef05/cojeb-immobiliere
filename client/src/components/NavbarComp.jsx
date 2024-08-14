@@ -51,6 +51,16 @@ export default function NavbarComp() {
         scrollPosition > 0 ? (isNavbarVisible ? 'translate-y-0 bg-white/50 ' : '-translate-y-full ') : 'mt-0'
       }`}
     >
+
+{/* <Navbar
+    fluid
+    rounded
+    className={`fixed top-0 left-0 right-0 rounded-lg justify-between w-full z-50 bg-transparent transition-transform duration-300 ${
+      scrollPosition > 0 ? (isNavbarVisible ? 'translate-y-0 bg-white-800/50' : '-translate-y-full') : 'mt-0'
+    }`}
+    style={{ boxShadow: '0px 4px 10px rgb(0 0 0 / 58%)' }}
+  > */}
+
       <div className={`flex flex-wrap rounded-lg md:flex-nowrap pb-6 w-full items-center justify-between`}>
         <Navbar.Brand href="/">
           <img src={logo} className={`fixed mr-3 h-20  mt-6 sm:h-36 md:h-40 lg:h-24 ml-6 transition-transform duration-300  ${

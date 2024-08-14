@@ -75,7 +75,7 @@
 import  { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import cover from "../../img/contact_cover.jpg";
+import cover from "../../img/cover3.jpg";
 import { Breadcrumb } from "flowbite-react";
 import { HiHome } from "react-icons/hi";
 import iemail from "../../img/iemailwhite.png"
@@ -121,7 +121,7 @@ export default function ContactHeader() {
           </Breadcrumb>
         </div>
       </div>
-      <div className="grid -mt-20 mb-14 mx-auto max-w-[70vw] sm:max-w-[80vw] lg:grid-cols-3 gap-4 z-20 relative lg:left-16 max-lg:px-4">
+      <div className="grid -mt-20 mb-14  mx-auto max-w-[70vw] sm:max-w-[80vw] lg:grid-cols-3 gap-4 z-20 relative lg:left-16 max-lg:px-4">
         <div className="flex lg:w-[18vw] flex-col items-center justify-center rounded-lg w-full h-44 p-4 text-center bg-white shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)]" data-aos="fade-up" data-aos-delay="200">
           <div className="bg-[#0B4F48] rounded-full p-2">
           <img src={ilocation} className="w-8 h-8 m-auto"/>
