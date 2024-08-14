@@ -12,7 +12,7 @@ export default function Contact() {
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full text-center justify-center items-center">
 
-        <div class=" py-3.5 text-base w-[50vw] md:w-[35vw] lg:w-[17vw] m-auto mt-6  h-[130px]  bg-[#2D7A71]   rounded-3xl ">
+        <div class=" py-3.5 text-base w-[50vw] md:w-[35vw] lg:w-[20vw] m-auto mt-6  h-[130px]  bg-[#2D7A71]   rounded-3xl ">
           <img src={iemail} className="w-10 h-8 m-auto mb-1"/>
           <div className="col-span-4 text-center font-bold">
             <h3 className="text-white">E-mail</h3>
@@ -20,7 +20,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <div class=" py-3.5 text-base w-[50vw] md:w-[35vw] lg:w-[17vw] m-auto mt-6   h-[130px] bg-[#2D7A71]   rounded-3xl">
+        <div class=" py-3.5 text-base w-[50vw] md:w-[35vw] lg:w-[20vw] m-auto mt-6   h-[130px] bg-[#2D7A71]   rounded-3xl">
         <img src={iphone} className="w-8 h-8 m-auto mb-1"/>
           <div className="col-span-4 text-center font-bold">
             <h3 className="text-white ">TELEPHONE</h3>
@@ -28,7 +28,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <div class=" py-3.5 text-base w-[50vw] md:w-[35vw] lg:w-[17vw] m-auto mt-6 h-[130px] bg-[#2D7A71]    rounded-3xl justify-center ">
+        <div class=" py-3.5 text-base w-[50vw] md:w-[35vw] lg:w-[20vw] m-auto mt-6 h-[130px] bg-[#2D7A71]    rounded-3xl justify-center ">
         <img src={iwebsite} className="w-8 h-8 m-auto mb-1"/>
           <div className="col-span-4 text-center font-bold">
             <h3 className="text-white">Site Web</h3>
@@ -36,7 +36,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <div class=" py-3.5 text-base  w-[50vw] md:w-[35vw] lg:w-[17vw] m-auto mt-6 h-[130px] bg-[#2D7A71]    rounded-3xl">
+        <div class=" py-3.5 text-base  w-[50vw] md:w-[35vw] lg:w-[20vw] m-auto mt-6 h-[130px] bg-[#2D7A71]    rounded-3xl">
         <img src={ilocation} className="w-8 h-8 m-auto mb-1"/>
           <div className="col-span-4 text-center font-bold">
             <h3 className="text-white ">Adresse</h3>
