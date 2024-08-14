@@ -31,6 +31,7 @@ const EnCoursProjects = () => {
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
+  const itemCount = 3;
 
   // Load Data
   useEffect(() => {
@@ -54,7 +55,7 @@ const EnCoursProjects = () => {
 
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: itemCount > 4,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,

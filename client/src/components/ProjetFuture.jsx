@@ -51,10 +51,11 @@ export default function ProjetFuture() {
         }
       })();
     }, []);
+    const itemCount = 3;
   
     const settings = {
       dots: true,
-      infinite: true,
+      infinite: itemCount>4,
       speed: 500,
       slidesToShow: 4,
       slidesToScroll: 1,
