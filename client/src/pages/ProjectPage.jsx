@@ -11,6 +11,8 @@ import Loading from '../components/Loading';
 import { useDispatch, useSelector } from 'react-redux';
 import Footer from '../components/Footer';
 import Carousel3 from '../components/AddedComponents/Carousel3';
+import 'react-quill/dist/quill.snow.css';
+
 
 
 
@@ -194,9 +196,7 @@ const ProjectPage = () => {
 
                                                 <div className="description">
                                                     <p className='font-heading mt-4 font-medium text-lg sm:text-xl'>Description</p>
-                                                    <p className='font-content mt-1 font-medium text-xs sm:text-sm md:text-md lg:text-lg break-words '>
-                                                        {description}
-                                                    </p>
+                                                    <div  dangerouslySetInnerHTML={{ __html: description }} />
                                                 </div>
 
                                                 

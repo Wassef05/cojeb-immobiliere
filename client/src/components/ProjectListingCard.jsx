@@ -2,6 +2,8 @@ import React from 'react'
 import { FaBath, FaBed, FaChartArea, FaBookmark  , FaLocationArrow, } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react';
+import 'react-quill/dist/quill.snow.css';
+
 
 // function truncateText(text, maxLength) {
 //     if (text.length <= maxLength) {
@@ -53,7 +55,8 @@ const ProjectListingCard = ({ project }) => {
                                maxHeight: '3.6em',
                                whiteSpace: 'normal',
                            }}>
-                            {description}
+                                                                                <div  dangerouslySetInnerHTML={{ __html: description }} />
+
                         </p>
                     </div>
                 </div>

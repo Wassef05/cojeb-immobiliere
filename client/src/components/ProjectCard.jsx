@@ -112,6 +112,8 @@
 import React from 'react';
 import { FaBath, FaCamera, FaCheck } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import 'react-quill/dist/quill.snow.css';
+
 
 const ProjectCard = ({ projectInfo }) => {
   if (!projectInfo || !projectInfo.project) {
@@ -159,7 +161,6 @@ const ProjectCard = ({ projectInfo }) => {
       <div className="p-4">
         <div onClick={() => navigate(`/projects/${_id}`)} className="cursor-pointer">
           <h2 className="text-[#3A5A40] font-heading text-xl truncate cursor-pointer">{title}</h2>
-          <p className="mt-1 text-sm text-[#3A5A40] font-content font-medium truncate">{description}</p>
           <p className="mt-2 text-sm text-[#3A5A40] font-content font-bold truncate">
             <span className="font-medium">Address:</span> {address}
           </p>

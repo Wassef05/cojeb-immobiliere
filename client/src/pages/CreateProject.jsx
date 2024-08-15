@@ -1,3 +1,5 @@
+
+/*<div dangerouslySetInnerHTML={{ __html: content }} />*/
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage';
 import  { useState,useEffect } from 'react'
 import { firebaseApp } from '../firebase';
@@ -5,11 +7,15 @@ import { ToastContainer, toast } from 'react-toastify';
 import { useForm } from 'react-hook-form'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 const CreateProject = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
       }, []);
+      const [content, setContent] = useState('');
+
 
     const { currentUser } = useSelector(state => state.user)
 
@@ -112,6 +118,7 @@ const CreateProject = () => {
                 },
                 body: JSON.stringify({
                     ...data,
+                    description:content,
                     imgUrl: formData.imgUrl,
                     userRef: currentUser._id
                 })
@@ -136,6 +143,20 @@ const CreateProject = () => {
         }
     }
 
+    const modules = {
+        toolbar: [
+          [{ 'font': [] }, { 'size': [] }],
+          ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+          [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+          [{ 'align': [] }],
+          ['link', 'image'],
+        ],
+      };
+
+      const formats = [
+        'font', 'size', 'bold', 'italic', 'underline', 'strike',
+        'list', 'bullet', 'align', 'link', 'image'
+      ];
 
 
     return (
@@ -162,15 +183,17 @@ const CreateProject = () => {
                                         />
                                         {errors.title && <p className='text-gray-800 text-xs'>{errors.title.message}</p>}
 
-                                        <textarea
-                                            id='description'
+                                        <ReactQuill id='description'
                                             type="text"
                                             placeholder='Description'
-                                            name='description'
+                                            value={content}
                                             className='form_input border-[1px]  focus:border-[#3A5A40] rounded-md placeholder:text-sm mt-3'
-                                            {...register('description', { required: 'This feild is required*' })}
-                                        />
-                                        {errors.description && <p className='text-gray-800  text-xs'>{errors.description.message}</p>}
+                                            onChange={(setContent)}
+                                            modules={modules}
+                                            formats={formats} 
+
+                                             />
+
 
                                         <input
                                             id='address'
@@ -243,7 +266,7 @@ const CreateProject = () => {
                                                 <span className='label-text font-medium'>Appartement</span>
                                                 <div>
                                                     <input
-                                                        defaultValue={20}
+                                                        defaultValue={0}
                                                         className='border-2 focus:border-[#3A5A40] rounded-md max-w-[84px] py-1 px-2 bg-transparent'
                                                         type="number"
                                                         name="area"

@@ -7,6 +7,10 @@ body {
 #root {
   @apply bg-[#f1f5f1]  h-full relative;
 }
+.ql-size-small { font-size: 0.75em; }
+.ql-size-large { font-size: 1em; }
+.ql-size-huge { font-size: 2em; }
+
 
 .container {
   @apply max-w-[1400px] mx-auto px-4 sm:px-10;

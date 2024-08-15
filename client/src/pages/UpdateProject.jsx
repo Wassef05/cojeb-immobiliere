@@ -6,8 +6,12 @@ import { useForm } from 'react-hook-form'
 import { useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import Loading from '../components/Loading';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 const UpdateProject = () => {
+    const [content, setContent] = useState('');
+
     useEffect(() => {
         window.scrollTo(0, 0);
       }, []);
@@ -72,7 +76,7 @@ const UpdateProject = () => {
 
     const setFeildValue = (data) => {
         setValue('title', data.title);
-        setValue('description', data.description);
+        setContent(data.description) ;
         setValue('address', data.address);
         setValue('area', data.area && data.area);
         setValue('furnished', data.furnished);
@@ -153,6 +157,7 @@ const UpdateProject = () => {
                 },
                 body: JSON.stringify({
                     ...data,
+                    description:content,
                     imgUrl: formData.imgUrl,
                     userRef: currentUser._id
                 })
@@ -176,6 +181,20 @@ const UpdateProject = () => {
             setFormSubmitLoading(false)
         }
     }
+    const modules = {
+        toolbar: [
+          [{ 'font': [] }, { 'size': [] }],
+          ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+          [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+          [{ 'align': [] }],
+          ['link', 'image'],
+        ],
+      };
+
+      const formats = [
+        'font', 'size', 'bold', 'italic', 'underline', 'strike',
+        'list', 'bullet', 'align', 'link', 'image'
+      ];
 
 
 
@@ -216,14 +235,16 @@ const UpdateProject = () => {
                                                 />
                                                 {errors.title && <p className='text-red-700 text-xs'>{errors.title.message}</p>}
 
-                                                <textarea
-                                                    id='description'
-                                                    type="text"
-                                                    placeholder='Description'
-                                                    name='description'
-                                                    className='form_input border-[1px]  focus:border-[#3A5A40] rounded-md placeholder:text-sm mt-3'
-                                                    {...register('description', { required: 'This feild is required*' })}
-                                                />
+                                                <ReactQuill id='description'
+                                            type="text"
+                                            placeholder='Description'
+                                            value={content}
+                                            className='form_input border-[1px]  focus:border-[#3A5A40] rounded-md placeholder:text-sm mt-3'
+                                            onChange={(setContent)}
+                                            modules={modules}
+                                            formats={formats} 
+
+                                             />
                                                 {errors.description && <p className='text-red-700 text-xs'>{errors.description.message}</p>}
 
                                                 <input
