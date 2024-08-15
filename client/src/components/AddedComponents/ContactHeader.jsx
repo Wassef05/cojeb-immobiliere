@@ -100,11 +100,11 @@ export default function ContactHeader() {
           className="absolute inset-0 w-full h-full object-cover"
         />
 
-        <div className="min-h-[350px] relative z-20 h-full max-w-6xl mx-auto flex flex-col justify-center items-center text-center text-white p-6" data-aos="fade-down">
+        <div className="min-h-[350px] relative z-20 h-full max-w-6xl mx-auto flex flex-col justify-center items-center text-center text-black p-6" data-aos="fade-down">
           <h2 className="sm:text-4xl uppercase text-3xl font-bold mb-6">
             Contact
           </h2>
-          <Breadcrumb
+          {/* <Breadcrumb
             className="text-white"
             aria-label="Default breadcrumb example"
           >
@@ -118,7 +118,7 @@ export default function ContactHeader() {
             <Breadcrumb.Item className="text-white">
               <div className="text-white text-xl">Contact</div>
             </Breadcrumb.Item>
-          </Breadcrumb>
+          </Breadcrumb> */}
         </div>
       </div>
       <div className="grid -mt-20 mb-14  mx-auto max-w-[70vw] sm:max-w-[80vw] lg:grid-cols-3 gap-4 z-20 relative lg:left-16 max-lg:px-4">
@@ -128,21 +128,21 @@ export default function ContactHeader() {
           </div>
           <h4 className="text-gray-800 text-base font-bold mt-4">Visitez le bureau
           </h4>
-          <p className="text-sm text-gray-600 mt-2"> Avenue de l'environnement, Sousse,Tunisia, 4000</p>
+          <p className="text-sm text-gray-600 mt-2"> Route de l'environnement 4000, Sousse,Tunisia</p>
         </div>
         <div className="flex lg:w-[18vw] flex-col items-center justify-center rounded-lg w-full h-44 p-4 text-center bg-white shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)]" data-aos="fade-up" data-aos-delay="400">
           <div className="bg-[#0B4F48] rounded-full p-2">
           <img src={iemail} className="w-8 h-8 m-auto"/>
           </div>
           <h4 className="text-gray-800 text-base font-bold mt-4">E-MAIL</h4>
-          <p className="text-sm text-gray-600 mt-2">cogebimmobilier@gmail.com</p>
+          <p className="text-sm text-gray-600 mt-2">contact@cojeb-immobiliere.com</p>
         </div>
         <div className="flex lg:w-[18vw] flex-col items-center justify-center rounded-lg w-full h-44 p-4 text-center bg-white shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)]" data-aos="fade-up" data-aos-delay="600">
           <div className="bg-[#0B4F48] rounded-full p-2">
           <img src={iwebsite} className="w-8 h-8 m-auto"/>
           </div>
           <h4 className="text-gray-800 text-base font-bold mt-4">Discutez avec nous</h4>
-          <p className="text-sm text-gray-600 mt-2">Cojeb-immobiliere.com</p>
+          <p className="text-sm text-gray-600 mt-2">www.Cojebimmobiliere.com</p>
         </div>
       </div>
     </div>

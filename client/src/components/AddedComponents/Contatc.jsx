@@ -12,34 +12,34 @@ export default function Contact() {
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full text-center justify-center items-center">
 
-        <div class=" py-3.5 text-base w-[50vw] md:w-[35vw] lg:w-[20vw] m-auto mt-6  h-[130px]  bg-[#2D7A71]   rounded-3xl ">
+        <div class=" py-3.5 text-base w-[50vw] md:w-[35vw] lg:w-[20vw] m-auto mt-6  h-[130px]  bg-gradient-to-r from-gray-300 to-gray-400   rounded-3xl ">
           <img src={iemail} className="w-10 h-8 m-auto mb-1"/>
           <div className="col-span-4 text-center font-bold">
-            <h3 className="text-white ">E-mail</h3>
-            <p className="text-black">cogebimmobiliere@ <br></br>gmail.com</p>
+            <h3 className="text-black ">E-mail</h3>
+            <p className="text-black">contact@cojebimmobiliere.com</p>
           </div>
         </div>
 
-        <div class=" py-3.5 text-base w-[50vw] md:w-[35vw] lg:w-[20vw] m-auto mt-6   h-[130px] bg-[#2D7A71]   rounded-3xl">
+        <div class=" py-3.5 text-base w-[50vw] md:w-[35vw] lg:w-[20vw] m-auto mt-6   h-[130px] bg-gradient-to-r from-gray-300 to-gray-400  rounded-3xl">
         <img src={iphone} className="w-8 h-8 m-auto mb-1"/>
           <div className="col-span-4 text-center font-bold">
-            <h3 className="text-white ">TELEPHONE</h3>
+            <h3 className="text-black ">TELEPHONE</h3>
             <p className="text-black ">+216 73 323 435</p>
           </div>
         </div>
 
-        <div class=" py-3.5 text-base w-[50vw] md:w-[35vw] lg:w-[20vw] m-auto mt-6 h-[130px] bg-[#2D7A71]    rounded-3xl justify-center ">
+        <div class=" py-3.5 text-base w-[50vw] md:w-[35vw] lg:w-[20vw] m-auto mt-6 h-[130px] bg-gradient-to-r from-gray-300 to-gray-400    rounded-3xl justify-center ">
         <img src={iwebsite} className="w-8 h-8 m-auto mb-1"/>
           <div className="col-span-4 text-center font-bold">
-            <h3 className="text-white">Site Web</h3>
+            <h3 className="text-black">Site Web</h3>
             <p className="text-black">Cojeb-immobiliére.com</p>
           </div>
         </div>
 
-        <div class=" py-3.5 text-base  w-[50vw] md:w-[35vw] lg:w-[20vw] m-auto mt-6 h-[130px] bg-[#2D7A71]    rounded-3xl">
+        <div class=" py-3.5 text-base  w-[50vw] md:w-[35vw] lg:w-[20vw] m-auto mt-6 h-[130px] bg-gradient-to-r from-gray-300 to-gray-400    rounded-3xl">
         <img src={ilocation} className="w-8 h-8 m-auto mb-1"/>
           <div className="col-span-4 text-center font-bold">
-            <h3 className="text-white ">Adresse</h3>
+            <h3 className="text-black ">Adresse</h3>
             <p className="text-black  ">Avenue de l'environnement, Sousse, 
             Tunisia, 4000</p>
           </div>

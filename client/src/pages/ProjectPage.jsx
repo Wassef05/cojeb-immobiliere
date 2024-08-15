@@ -10,7 +10,8 @@ import { FaLocationArrow, FaBed, FaBath, FaAngleUp, FaAngleDown, FaShare, FaLock
 import Loading from '../components/Loading';
 import { useDispatch, useSelector } from 'react-redux';
 import Footer from '../components/Footer';
-import Carousel3 from '../components/AddedComponents/Carousel3'
+import Carousel3 from '../components/AddedComponents/Carousel3';
+
 
 
 const ProjectPage = () => {
@@ -175,11 +176,11 @@ const ProjectPage = () => {
                                     <div className="lg:col-span-7  ">
                                         <div className='bg-white md:p-12 p-6 rounded-md shadow-sm shadow-[#3A5A40]'>
                                             <div className="property_info">
-                                                <p className='font-heading text-[#3A5A40]'>
+                                                {/* <p className='font-heading text-[#3A5A40]'>
                                                     <span className='py-2 px-6 bg-[#3A5A40]/40 rounded-full border border-[#3A5A40] uppercase'>
                                                         {type}
                                                     </span>
-                                                </p>
+                                                </p> */}
 
                                                 <h1 className='font-heading font-bold mt-5 md:mt-8 text-2xl sm:text-3xl text-black capitalize'>
                                                     {title}
@@ -233,7 +234,7 @@ const ProjectPage = () => {
                                                         <p className='font-heading text-md lg:text-lg '>
                                                             Parking
                                                         </p>
-                                                        <p className={`font-heading ${parking ? "text-green-600" : "text-gray-400"}  text-md lg:text-lg capitalize`}>
+                                                        <p className={`font-heading ${parking ? "text-black" : "text-gray-400"}  text-md lg:text-lg capitalize`}>
                                                             {
                                                                 parking ? "oui" : 'Non'
                                                             }
@@ -243,7 +244,7 @@ const ProjectPage = () => {
                                                         <p className='font-heading text-md lg:text-lg '>
                                                             Espace Comercial
                                                         </p>
-                                                        <p className={`font-heading ${furnished ? "text-green-600" : "text-gray-400"}  text-md lg:text-lg capitalize`}>
+                                                        <p className={`font-heading ${furnished ? "text-black" : "text-gray-400"}  text-md lg:text-lg capitalize`}>
                                                             {
                                                                 furnished ? "OUI" : 'Non'
                                                             }
@@ -253,7 +254,7 @@ const ProjectPage = () => {
                                                         <p className='font-heading text-md lg:text-lg '>
                                                             Bureau
                                                         </p>
-                                                        <p className={`font-heading ${bureau ? "text-green-600" : "text-gray-400"}  text-md lg:text-lg capitalize`}>
+                                                        <p className={`font-heading ${bureau ? "text-black" : "text-gray-400"}  text-md lg:text-lg capitalize`}>
                                                             {
                                                                 bureau ? "Oui" : 'Non'
                                                             }
@@ -263,21 +264,21 @@ const ProjectPage = () => {
                                                         <p className='font-heading text-md lg:text-lg '>
                                                             Appartements
                                                         </p>
-                                                        <p className={`font-heading ${Appartements ? "text-green-600" : "text-gray-400"}  text-md lg:text-lg capitalize`}>
+                                                        <p className={`font-heading ${Appartements ? "text-black" : "text-gray-400"}  text-md lg:text-lg capitalize`}>
                                                             {
                                                                 Appartements ? "Oui" : 'Non'
                                                             }
                                                         </p>
                                                         
                                                     </div> */}
-                                                    {area===0?
+                                                    {Appartements===0?
                                                     <></>
                                                     :
                                                          <div className="grid grid-cols-2 mt-2">
                                                          <p className='font-heading text-md lg:text-lg '>
                                                          Appartements
                                                          </p>
-                                                         <p className={`font-heading ${furnished ? "text-green-600" : "text-gray-400"}  text-md lg:text-lg capitalize`}>
+                                                         <p className={`font-heading ${furnished ? "text-black" : "text-gray-400"}  text-md lg:text-lg capitalize`}>
                                                              {
                                                                  area
                                                              }
@@ -345,7 +346,7 @@ const ProjectPage = () => {
                                                         <p className='font-heading text-md lg:text-lg '>
                                                             Parking
                                                         </p>
-                                                        <p className={`font-heading ${parking ? "text-green-600" : "text-gray-400"}  text-md lg:text-lg capitalize`}>
+                                                        <p className={`font-heading ${parking ? "text-black" : "text-gray-400"}  text-md lg:text-lg capitalize`}>
                                                             {
                                                                 parking ? "Yes" : 'No'
                                                             }
@@ -353,22 +354,22 @@ const ProjectPage = () => {
                                                     </div>
                                                     <div className="grid grid-cols-2 mt-2">
                                                         <p className='font-heading text-md lg:text-lg '>
-                                                            Meublé
+                                                            esspace commercial
                                                         </p>
-                                                        <p className={`font-heading ${furnished ? "text-green-600" : "text-gray-400"}  text-md lg:text-lg capitalize`}>
+                                                        <p className={`font-heading ${furnished ? "text-black" : "text-gray-400"}  text-md lg:text-lg capitalize`}>
                                                             {
                                                                 furnished ? "Yes" : 'No'
                                                             }
                                                         </p>
                                                     </div>
-                                                    <div className="grid grid-cols-2 mt-2">
+                                                    {/* <div className="grid grid-cols-2 mt-2">
                                                         <p className='font-heading text-md lg:text-lg '>
                                                         Appartements
                                                         </p>
                                                         <p className='font-heading  text-md lg:text-lg '>
-                                                            {area} <span>m²</span>
+                                                            {area} 
                                                         </p>
-                                                    </div>
+                                                    </div> */}
                                                     {
                                                         offer &&
                                                         <div className="grid grid-cols-2 mt-2">

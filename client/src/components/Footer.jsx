@@ -15,7 +15,7 @@ const Footer = () => {
         </div>
 
         <div className="lg:flex lg:items-center">
-          <p className="text-[#E2B04A] max-w-[80%] text-center">
+          <p className="text-[#E2B04A] max-w-[80%] text-center text-justify">
             La société COGEB IMMOBILIERE, fondée en 1999 et dirigée par Monsieur Mohamed LAZREG, est agréée par le ministère de l’équipement de l’habitat et de l’aménagement du territoire.
           </p>
         </div>

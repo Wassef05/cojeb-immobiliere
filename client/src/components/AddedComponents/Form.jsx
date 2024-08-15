@@ -232,7 +232,7 @@ export default function Form() {
                             <textarea 
                                 rows={10} 
                                 name='message'
-                                placeholder="Write Message"
+                                placeholder=" Message"
                                 value={formData.message}
                                 onChange={handleChange}
                                 className="px-2 pt-3 rounded-md bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-[#0B4F48] outline-none"
@@ -249,7 +249,7 @@ export default function Form() {
                                     d="M392.19 156.054 211.268 281.667 22.032 218.58C8.823 214.168-.076 201.775 0 187.852c.077-13.923 9.078-26.24 22.338-30.498L506.15 1.549c11.5-3.697 24.123-.663 32.666 7.88 8.542 8.543 11.577 21.165 7.879 32.666L390.89 525.906c-4.258 13.26-16.575 22.261-30.498 22.338-13.923.076-26.316-8.823-30.728-22.032l-63.393-190.153z"
                                     clipRule="evenodd" data-original="#000000" />
                             </svg>
-                            Send Message
+                            Envoyer un  message
                         </button>
                     </form>
                 </div>

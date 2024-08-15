@@ -8,9 +8,9 @@ import cover3 from "../../img/cover1.png"
 
 
 const slides = [
+  cover3,
   cover1,
-  cover2,
-  cover3
+  cover2
 ];
 
 export default function HomeHeader() {
@@ -34,7 +34,7 @@ export default function HomeHeader() {
             <div key={index} className="w-full h-full">
               <div
                 className="w-full h-screen bg-center bg-no-repeat bg-cover"
-                style={{ backgroundImage: `url(${slide})`, backgroundSize: '75%' }}
+                style={{ backgroundImage: `url(${slide})`, backgroundSize: '80%' }}
               ></div>
             </div>
           ))}
