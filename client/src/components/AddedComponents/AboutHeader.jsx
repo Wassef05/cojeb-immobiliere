@@ -4,7 +4,7 @@ import axios from 'axios';
 import cover from "../../img/cover1.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Breadcrumb } from "flowbite-react";
+// import { Breadcrumb } from "flowbite-react";
 import logement from "../../img/logement.png"
 import commerce from "../../img/commercial.png"
 import parking from "../../img/parking.png"

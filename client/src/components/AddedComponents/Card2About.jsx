@@ -9,8 +9,8 @@ export default function Card2About() {
         <div className="md:col-span-1  z-20 mt-24">
             <div className="mb-12 sm:max-w-[50vw]  sm:ml-6 md:ml-8   ">
               <div className=' w-full flex justify-end'>
-              <h2 className=" shadow-2xl shadow-black text-black  w-fit text-3xl mb-10 px-10 py-6 bg-gradient-to-r from-lime-600 to-lime-100 rounded-lg font-extrabold">
-              OBJECTIF DE La SOCIETE
+              <h2 className=" shadow-2xl shadow-black text-black  w-fit text-3xl mb-10 px-10 py-6 bg-gradient-to-r from-slate-300 to-slate-500 rounded-lg font-extrabold">
+              OBJECTIF DE LA SOCIETE
               </h2>
                 </div>
               <p className='text-justify font-sans  text-xl leading-6'> 
@@ -21,10 +21,10 @@ export default function Card2About() {
           <div className="flex justify-end  flex-row items-center">
   <img
     src={cov}
-    className="object-cover mr-24 z-20 ml-10 rounded-lg w-[650px] h-[450px] shadow-2xl shadow-black "
+    className="object-cover mr-24 z-20 ml-10 rounded-l-3xl w-[650px] h-[450px] shadow-2xl shadow-black "
     alt="Profile"
   />
-  <div className='-ml-64 bg-gradient-to-r  to-lime-100 from-lime-600 w-72 h-[540px] rounded-l-3xl'></div>
+  <div className='-ml-64 bg-gradient-to-r from-slate-300 to-slate-500 w-72 h-[540px] rounded-l-3xl'></div>
 </div>
         </div>
       </div>

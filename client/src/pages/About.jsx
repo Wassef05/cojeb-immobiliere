@@ -16,9 +16,10 @@ export default function About() {
   return (
     <div>
       <AboutHeader />
-      <Carousel3 />
+      
       <Card1About/>
       <Card2About/>
+      <Carousel3 />
       <Card3/>
       <Newsetter/>
       <Footer/>
