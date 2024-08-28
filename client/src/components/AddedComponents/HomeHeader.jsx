@@ -5,6 +5,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import cover1 from "../../img/cover1.jpg"
 import cover2 from "../../img/cover2.jpg"
 import cover3 from "../../img/cover1.png"
+import CoverCard from './CoverCard';
 
 
 const slides = [
@@ -39,6 +40,7 @@ export default function HomeHeader() {
             </div>
           ))}
         </Slider>
+       <CoverCard></CoverCard>
       </div>
     </div>
   );

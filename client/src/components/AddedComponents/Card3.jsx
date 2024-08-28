@@ -6,7 +6,7 @@ export default function Card3() {
   const navigate = useNavigate();
   return (
     <div className='mt-10'>
-      <div className="relative w-5/6 mx-auto font-sans max-h-80 rounded-lg overflow-hidden before:absolute before:w-full before:h-max-h-72 before:inset-0 before:bg-[#1a412e] before:opacity-50 before:z-10">
+      <div className="relative w-5/6 mx-auto font-sans max-h-80 rounded-lg overflow-hidden before:absolute before:w-full before:h-max-h-72 before:inset-0 before:bg-[#1a412e] before:opacity-30 before:z-10 shadow-lg shadow-black">
         <img src={cov} className="absolute inset-0 w-full h-80 object-cover" alt="Biglogo"/>
 
         <div className="min-h-[350px] relative z-30 h-max-h-72 max-w-6xl mx-auto flex flex-col justify-center items-center text-center text-white p-6 rounded-lg">

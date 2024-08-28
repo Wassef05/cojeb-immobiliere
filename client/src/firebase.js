@@ -9,9 +9,9 @@ import { getAnalytics } from "firebase/analytics";
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyB8X4k_NZ4aKLwsXvB0IViv3c-w6EJv_A0",
-  authDomain: "cojeb-property-sale-3f10a.firebaseapp.com",
-  projectId: "cojeb-property-sale-3f10a",
-  storageBucket: "cojeb-property-sale-3f10a.appspot.com",
+  authDomain: "cogeb-property-sale-3f10a.firebaseapp.com",
+  projectId: "cogeb-property-sale-3f10a",
+  storageBucket: "cogeb-property-sale-3f10a.appspot.com",
   messagingSenderId: "483531472357",
   appId: "1:483531472357:web:b1d4be16d4abbbf5cbc30c",
   measurementId: "G-85NW2J18MH"

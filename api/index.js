@@ -23,7 +23,7 @@
 // app.use(cookieParser());
 
 // app.use(cors({
-//   origin: ["https://cojeb-immobiliere.vercel.app"],
+//   origin: ["https://cogeb-immobiliere.vercel.app"],
 //   credentials: true,
 //   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
 // }));
@@ -114,7 +114,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-  origin: ["https://cojeb-immobiliere.vercel.app"],
+  origin: ["https://cogeb-immobiliere.vercel.app"],
   credentials: true,
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
 }));

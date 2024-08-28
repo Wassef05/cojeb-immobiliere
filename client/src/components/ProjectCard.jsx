@@ -35,12 +35,12 @@
 
 
 //                     <div className="absolute bottom-3 left-3 inline-flex items-center rounded-sm bg-[#3A5A40] px-2 py-1 shadow-md">
-//                     <span className="text-xs text-white uppercase font-heading">
+//                     <span className="text-xs text-white uppercase font-bold">
 //                         {etat === 'not started' ? 'Non démarré' : etat === 'en cours' ? 'En cours' : etat === 'terminee' ? 'Terminé' : ''}
 //                     </span>
 //                     </div>
 //                     <div className="absolute bottom-3 right-3 inline-flex items-center rounded-sm  px-2 py-1 ">
-//                         <span className=" text-xs text-white uppercase font-heading flex items-center ">
+//                         <span className=" text-xs text-white uppercase font-bold flex items-center ">
 //                             <FaCamera className='mr-1' />{imgUrl.length}
 //                         </span>
 //                     </div>
@@ -56,7 +56,7 @@
 //                         className='cursor-pointer'
 //                     >
 //                         <h2
-//                             className="text-[#3A5A40] font-heading text-xl truncate cursor-pointer">
+//                             className="text-[#3A5A40] font-bold text-xl truncate cursor-pointer">
 //                             {title}
 //                         </h2>
 //                         <p className="mt-1 text-sm text-[#3A5A40] font-content font-medium truncate"> {description}</p>
@@ -65,7 +65,7 @@
 //                         <div className='mt-3 flex items-end justify-start'>
 
 
-//                             <p className='text-[#3A5A40] w-1/2 font-content font-semibold text-sm flex items-center '><span className='font-heading font-bold mr-1'>{etat}</span> </p>
+//                             <p className='text-[#3A5A40] w-1/2 font-content font-semibold text-sm flex items-center '><span className='font-bold font-bold mr-1'>{etat}</span> </p>
 
 
 
@@ -82,7 +82,7 @@
                             
 
 //                             <div className="inline-flex rounded-xl max-w-[150px]  duration-500">
-//                                 <p className='font-heading text-lg truncate'>{projectInfo.project.area ? projectInfo.project.area : 0} <span className='font-content'>m²</span> </p>
+//                                 <p className='font-bold text-lg truncate'>{projectInfo.project.area ? projectInfo.project.area : 0} <span className='font-content'>m²</span> </p>
 //                             </div>
 //                         </div>
 //                     </div>
@@ -90,12 +90,12 @@
 //                     <div className='mt-4 flex items-end justify-between'>
 //                         <button
 //                             onClick={() => navigate(`/update_project/${_id}`)}
-//                             className='bg-[#3A5A40] rounded-sm py-2 px-7 font-heading text-white hover:opacity-95 text-sm'>
+//                             className='bg-[#3A5A40] rounded-sm py-2 px-7 font-bold text-white hover:opacity-95 text-sm'>
 //                             Modifier
 //                         </button>
 //                         <button
 //                             onClick={() => projectInfo.handleProjectDelete(_id)}
-//                             className='bg-red-800 py-2 px-5 rounded-sm  font-heading text-white hover:opacity-95 text-sm z-10'>
+//                             className='bg-red-800 py-2 px-5 rounded-sm  font-bold text-white hover:opacity-95 text-sm z-10'>
 //                             Supprimer
 //                         </button>
 //                     </div>
@@ -147,12 +147,12 @@ const ProjectCard = ({ projectInfo }) => {
           alt="wallpaper"
         />
         <div className="absolute bottom-3 left-3 inline-flex items-center rounded-sm bg-[#3A5A40] px-2 py-1 shadow-md">
-          <span className="text-xs text-white uppercase font-heading">
+          <span className="text-xs text-white uppercase font-bold">
             {etat === 'future' ? 'Future' : etat === 'en cours' ? 'En cours' : etat === 'terminee' ? 'Terminé' : ''}
           </span>
         </div>
         <div className="absolute bottom-3 right-3 inline-flex items-center rounded-sm px-2 py-1">
-          <span className="text-xs text-white uppercase font-heading flex items-center">
+          <span className="text-xs text-white uppercase font-bold flex items-center">
             <FaCamera className="mr-1" />
             {imgUrl.length}
           </span>
@@ -160,13 +160,13 @@ const ProjectCard = ({ projectInfo }) => {
       </div>
       <div className="p-4">
         <div onClick={() => navigate(`/projects/${_id}`)} className="cursor-pointer">
-          <h2 className="text-[#3A5A40] font-heading text-xl truncate cursor-pointer">{title}</h2>
+          <h2 className="text-[#3A5A40] font-bold text-xl truncate cursor-pointer">{title}</h2>
           <p className="mt-2 text-sm text-[#3A5A40] font-content font-bold truncate">
             <span className="font-medium">Address:</span> {address}
           </p>
           <div className="mt-3 flex items-end justify-start">
             <p className="text-[#3A5A40] w-1/2 font-content font-semibold text-sm flex items-center">
-              <span className="font-heading font-bold mr-1">{etat}</span>
+              <span className="font-bold font-bold mr-1">{etat}</span>
             </p>
           </div>
           <div className="mt-2 flex items-end justify-start">
@@ -185,7 +185,7 @@ const ProjectCard = ({ projectInfo }) => {
           </div>
           <div className="mt-3 flex items-end justify-between">
             <div className="inline-flex rounded-xl max-w-[150px] duration-500">
-              <p className="font-heading text-lg truncate">
+              <p className="font-bold text-lg truncate">
                 {area ? area : 0}  <span className="font-content"> appartements</span>
               </p>
             </div>
@@ -194,13 +194,13 @@ const ProjectCard = ({ projectInfo }) => {
         <div className="mt-4 flex items-end justify-between">
           <button
             onClick={() => navigate(`/update_project/${_id}`)}
-            className="bg-[#3A5A40] rounded-sm py-2 px-7 font-heading text-white hover:opacity-95 text-sm"
+            className="bg-[#3A5A40] rounded-sm py-2 px-7 font-bold text-white hover:opacity-95 text-sm"
           >
             Modifier
           </button>
           <button
             onClick={() => projectInfo.handleProjectDelete(_id)}
-            className="bg-red-800 py-2 px-5 rounded-sm font-heading text-white hover:opacity-95 text-sm z-10"
+            className="bg-red-800 py-2 px-5 rounded-sm font-bold text-white hover:opacity-95 text-sm z-10"
           >
             Supprimer
           </button>

@@ -109,7 +109,7 @@ const TermineeProjects = () => {
       >
         <div className="content">
           <h2
-            className="text-3xl font-bold sm:text-3xl font-heading  text-[#515557] sm:text-left "
+            className="text-xl  sm:text-3xl font-bold  text-[#515557] sm:text-left "
             data-aos="fade-down"
           >
             NOS PROJETS REALISÉS

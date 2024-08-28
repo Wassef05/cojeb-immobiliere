@@ -13,7 +13,7 @@ export default function Card2About() {
               OBJECTIF DE LA SOCIETE
               </h2>
                 </div>
-              <p className='text-justify font-sans  text-xl leading-6'> 
+              <p className=' text-black font-playfair text-base text-justify text-xl leading-6'> 
               La société COGEB IMMOBILIERE a pour objectif le développement des activités de la promotion immobilière, à travers une sélection de sites, une conception réfléchie et un produit de qualité. Elle offre à ses clients des espaces d'habitations, de commerce, professionnel ou administratif de haut standing qui répondent à leurs perspectives et qui contribuent à l'amélioration de leur cadre de vie.Notre société est entourée d'une équipe pluridisciplinaire extrêmement Compétente (architectes, bureaux d'études, bureaux de contrôle...), qui a toujours accordé une attention particulière à l'architecture de ses bâtiments dont plusieurs font aujourd'hui figure de référence.COGEB IMMOBILIERE réalise des programmes immobiliers neufs en tenant compte des critères suivants :
               </p>
             </div>

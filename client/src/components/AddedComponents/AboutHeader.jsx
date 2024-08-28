@@ -135,42 +135,42 @@ const AboutHeader = () => {
 
 
 
-      <div className="grid pb-6 -mt-40 mb-14 mx-auto max-w-[50vw] sm:max-w-[60vw] lg:grid-cols-3  z-20 relative  max-lg:px-4 bg-[#0B4F48] rounded-[30px]" data-aos="fade-up" data-aos-delay="200">
+      <div className="grid pb-6 -mt-10 mb-14 mx-auto max-w-[50vw] sm:max-w-[60vw] lg:grid-cols-3 z-20 relative max-lg:px-4 bg-gradient-to-r from-gray-300 to-gray-400 rounded-[30px] shadow-lg shadow-black" data-aos="fade-up" data-aos-delay="200">
         
 
 
 
 
 
-        <div className="flex lg:w-[18vw] flex-col items-center justify-center rounded-lg w-full h-44 p-4 text-center bg-[#0B4F48] " >
+        <div className="flex lg:w-[18vw] flex-col items-center justify-center rounded-lg w-full h-44 p-4 text-center  " >
         <div className="pt-4 p-0 sm:p-4 md:p-6 grid grid-cols-3 items-center justify-center ">
         <img src={logement} className='col-span-1'/>
         <div className='col-span-2'>
-        <h3 className="text-xs text-[#F2DC85] sm:text-base text-center md:text-lg font-semibold uppercase mb-2 ml-4 lg:mt-2">logements</h3><h3 className="text-lg md:text-xl text-[#F2DC85] font-semibold mb-2 mt-6">{displayedProjectCount} <span className='text-[#F2DC85]'>+</span></h3>
+        <h3 className="text-xs text-black sm:text-base text-center md:text-lg font-semibold uppercase mb-2 ml-4 lg:mt-2">logements</h3><h3 className="text-lg md:text-xl text-black font-semibold mb-2 mt-6">{displayedProjectCount} <span className='text-black'>+</span></h3>
 
         </div>
           </div>
         </div>
 
 
-        <div className="flex lg:w-[18vw] flex-col items-center justify-center rounded-lg w-full h-44 p-4 text-center bg-[#0B4F48] ">
+        <div className="flex lg:w-[18vw] flex-col items-center justify-center rounded-lg w-full h-44 p-4 text-center  ">
         <div className="p-0 md:p-6 
         grid grid-cols-3 items-center">
         <img src={commerce} className='col-span-1'/>
         <div className='col-span-2'>
-        <h3 className="text-xs sm:text-base mt-3 text-center md:text-lg text-[#F2DC85] font-semibold uppercase mb-2">espace commercial</h3>
-        <h3 className="text-lg md:text-xl font-semibold mb-2 mt-6 text-[#F2DC85]">{displayedProjectCount} <span className='text-[#F2DC85]'>+</span></h3>
+        <h3 className="text-xs sm:text-base mt-3 text-center md:text-lg text-black font-semibold uppercase mb-2">espace commercial</h3>
+        <h3 className="text-lg md:text-xl font-semibold mb-2 mt-6 text-black">{displayedProjectCount} <span className='text-black'>+</span></h3>
         </div>
           </div>
         </div>
 
 
-        <div className="flex lg:w-[18vw] flex-col items-center justify-center rounded-lg w-full h-44 p-4 text-center bg-[#0B4F48] " >
+        <div className="flex lg:w-[18vw] flex-col items-center justify-center rounded-lg w-full h-44 p-4 text-center  " >
         <div className="p-0 sm:p-4 md:p-6   items-center grid grid-cols-3">
         <img src={parking} className='col-span-1'/>
               <div className='col-span-2'>
-              <h3 className="text-xs sm:text-base mt-3 text-center md:text-lg text-[#F2DC85] font-semibold uppercase mb-2">Parking</h3>
-            <h3 className="text-lg md:text-xl font-semibold mb-2 mt-6 text-[#F2DC85]">{displayedParkingCount} <span className='text-[#F2DC85]'>+</span></h3>
+              <h3 className="text-xs sm:text-base mt-3 text-center md:text-lg text-black font-semibold uppercase mb-2">Parking</h3>
+            <h3 className="text-lg md:text-xl font-semibold mb-2 mt-6 text-black">{displayedParkingCount} <span className='text-black'>+</span></h3>
          
               </div>
              </div>

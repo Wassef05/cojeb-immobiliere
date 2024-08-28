@@ -58,7 +58,7 @@ export default function NavbarComp() {
     className={`fixed top-0 left-0 right-0 rounded-lg justify-between w-full z-50 bg-transparent transition-transform duration-300 ${
       scrollPosition > 0 ? (isNavbarVisible ? 'translate-y-0 bg-white-800/50' : '-translate-y-full') : 'mt-0'
     }`}
-    style={{ boxShadow: '0px 4px 10px rgb(0 0 0 / 58%)' }}
+    style={{ boxShadow: '0px 4px 10px rgb(0 0 0 / 5%)' }}
   >
 
       <div className={`flex flex-wrap rounded-lg md:flex-nowrap pb-6 w-full items-center justify-between`}>
@@ -133,7 +133,7 @@ export default function NavbarComp() {
                   </li>
                   <li>
                     <a href="/searchProject?filter=future" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                       Futures projets
+                       Futurs projets
                     </a>
                   </li>
               

@@ -45,7 +45,7 @@ const ProjectListingCard = ({ project }) => {
                     <div
                         className="content-container p-3 pb-0 cursor-pointer"
                     >
-                        <h2 className="text-lg font-heading truncate uppercase duration-300 group-hover:text-[#3A5A40] ">{title}</h2>
+                        <h2 className="text-lg text-black font-bold truncate uppercase duration-300 group-hover:text-black ">{title}</h2>
                         <p className="text-sm text-gray-600 overflow-hidden overflow-ellipsis"
                            style={{
                                display: '-webkit-box',

@@ -18,9 +18,13 @@ import 'react-quill/dist/quill.snow.css';
 
 const ProjectPage = () => {
     const location = useLocation();
+
+
+
     const [listings, setListings] = useState({})
     const [isFeatureActive, setIsFeatureActive] = useState(false)
-    const [loading, setLoading] = useState(false)           
+    const [loading, setLoading] = useState(false)
+
     const { area, address, bath, bed, description, bureau,Appartements, furnished, offer, parking, title, type, _id, userRef } = listings;
 
     const navigate = useNavigate()
@@ -56,16 +60,6 @@ const ProjectPage = () => {
         })()
     }, [params.id])
 
-
-      // Ajoutez cet effet pour activer automatiquement la lecture des vidéos MP4
-      useEffect(() => {
-        const videos = document.querySelectorAll('video');
-        videos.forEach(video => {
-            video.muted = false;
-            video.play();
-        });
-    }, [listings]);
-
     //====SLider Functions=====//
     function SamplePrevArrow({ onClick }) {
         return (
@@ -87,7 +81,6 @@ const ProjectPage = () => {
             </div>
         )
     }
-    
 
     const settings = {
         infinite: true,
@@ -159,29 +152,23 @@ const ProjectPage = () => {
                     <div className="listing_section pb-16">
                               <div className="w-full h-32 "></div>
 
-<Slider {...settings} className='z-10 relative'>
-                                {listings.imgUrl && listings.imgUrl.map((listing, index) => (
-                                    <div key={index} className="w-full mx-auto z-10">
-                                        {isMp4(removeLastNCharacters(listing, 53)) ?
-                                            <video 
-                                                className='h-[200px] sm:h-[450px] mx-auto rounded-lg rounded-b-lg' 
-                                                src={listing} 
-                                                alt="video" 
-                                                autoPlay 
-                                                controls 
-                                                 
-                                            />
-                                            :
-                                            <img 
-                                                className='h-[200px] sm:h-[450px] mx-auto rounded-lg rounded-b-lg' 
-                                                src={listing} 
-                                                alt="image" 
-                                            />
+                        <Slider {...settings} className='z-10 relative'>
+                            {
+                                listings.imgUrl && listings.imgUrl.map((listing, index) => (
+                                    <div
+                                        key={index}
+                                        className="w-full mx-auto z-10"
+                                    >
+                                        {isMp4(removeLastNCharacters(listing,53))?
+                                        <video className='h-[200px] sm:h-[450px]  mx-auto rounded-lg rounded-b-lg' src={listing} alt="video" autoPlay="true" controls muted="false" loop="true"/>
+                                        :
+                                        <img className='h-[200px] sm:h-[450px]  mx-auto rounded-lg rounded-b-lg' src={listing} alt="image"  />
+                                        
                                         }
                                     </div>
-                                ))}
-                            </Slider>
-
+                                ))
+                            }
+                        </Slider>
 
 
                         <div className="container ">
@@ -361,7 +348,7 @@ const ProjectPage = () => {
                                                         </p>
                                                         <p className={`font-heading ${parking ? "text-black" : "text-gray-400"}  text-md lg:text-lg capitalize`}>
                                                             {
-                                                                parking ? "Yes" : 'No'
+                                                                parking ? "oui" : 'Non'
                                                             }
                                                         </p>
                                                     </div>
@@ -371,7 +358,7 @@ const ProjectPage = () => {
                                                         </p>
                                                         <p className={`font-heading ${furnished ? "text-black" : "text-gray-400"}  text-md lg:text-lg capitalize`}>
                                                             {
-                                                                furnished ? "Yes" : 'No'
+                                                                furnished ? "OUI" : 'Non'
                                                             }
                                                         </p>
                                                     </div>
