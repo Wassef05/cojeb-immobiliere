@@ -40,13 +40,7 @@ export default function Card1() {
 >
   A PROPOS DE NOUS
 </h2>
-{/* <h2
-  className="text-[#EB5E1A] text-2xl sm:text-4xl font-bold mb-16 font-lora tracking-wide shadow-lg shadow-gray-800"
-  style={{ WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale' }}
-  data-aos="fade-down"
->
-  A PROPOS DE NOUS
-</h2> */}
+
               <p 
                 className="  leading-relaxed text-gray-800 leading-loose font-playfair text-base text-justify"
                 data-aos="fade-up"
