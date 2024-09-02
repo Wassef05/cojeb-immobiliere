@@ -52,7 +52,7 @@ export default function Card1() {
                 data-aos="fade-up"
                 data-aos-delay="800"
               >
-                La société COGEB IMMOBILIERE, fondée en <strong>1999</strong> et dirigée par Monsieur <strong> Mohamed LAZREG</strong>, est agréée par le ministère de l’équipement de l’habitat et de l’aménagement du territoire. Son objectif principal est de développer des projets immobiliers de haute qualité en sélectionnant soigneusement les sites, en concevant des espaces répondant aux besoins des clients, et en garantissant un cadre de vie amélioré. Elle dispose d'une équipe compétente, notamment des architectes, bureaux d'études et de contrôle, qui accordent une attention particulière à l'architecture de ses bâtiments, devenus des références dans le domaine.
+                La société <strong> COGEB IMMOBILIERE</strong>, fondée en <strong>1999</strong> et dirigée par Monsieur <strong> Mohamed LAZREG</strong>, est agréée par le ministère de l’équipement de l’habitat et de l’aménagement du territoire. Son objectif principal est de développer des projets immobiliers de haute qualité en sélectionnant soigneusement les sites, en concevant des espaces répondant aux besoins des clients, et en garantissant un cadre de vie amélioré. Elle dispose d'une équipe compétente, notamment des architectes, bureaux d'études et de contrôle, qui accordent une attention particulière à l'architecture de ses bâtiments, devenus des références dans le domaine.
               </p>
             </div>
           </div>

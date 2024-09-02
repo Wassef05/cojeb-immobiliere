@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'GOXAC-GOXAC-Shadow';
+  src: url('../../img/fonts/GOXAC-GOXAC-Shadow.otf') format('truetype');
+ 
+}
+
+
+
+.textDiv {
+  font-family: 'GOXAC-GOXAC-Shadow';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; 
+  text-align: center;
+}
+
+.textDiv h1 {
+  color: #020411; 
+  font-size: 2rem !important;
+  font-family: 'GOXAC-GOXAC-Shadow' !important;
+  font-weight: 600;
+  line-height: 4rem;
+                      /* text-shadow: 1px 1px 5px rgb(240, 237, 237);  */
+}
+
+
+.cursor {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+
+/* Animation for text movement */
+@keyframes moveLeftToCenter {
+  0% {
+    transform: translateX(-100%); /* Start from off-screen left */
+  }
+  50% {
+    transform: translateX(0); /* Center horizontally */
+  }
+  100% {
+    transform: translateX(0); /* Stay in center */
+  }
+}
+
+/* Apply the animation */
+.deutschlands-font {
+  animation: moveLeftToCenter 5s ease-in-out forwards;
+}
+
+/* Animation pour le clignotement du point */
+@keyframes typing-dot-blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}

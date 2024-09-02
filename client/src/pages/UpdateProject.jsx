@@ -91,7 +91,7 @@ const UpdateProject = () => {
 
     const handleImageUpload = async () => {
 
-        if (imageFile.length > 0 && imageFile.length + formData.imgUrl.length < 7) {
+        if (imageFile.length > 0 && imageFile.length + formData.imgUrl.length < 13) {
             setLoading(true)
             const promises = [];
             for (let i = 0; i < imageFile.length; i++) {
@@ -375,7 +375,7 @@ const UpdateProject = () => {
                                         <div>
                                             <p className='font-content text-[16px] mb-3 font-normal text-black'>
                                                 <span className='font-semibold mr-1'>Note:</span>
-                                                First image will be cover image (max:6)
+                                                First image will be cover image (max:9)
                                             </p>
                                             <div className="image_upload_container md:p-5 md:border-2 bg-transparent border-dashed rounded-sm md:flex items-center justify-center gap-2">
 

@@ -254,7 +254,7 @@ const CreateProject = () => {
                                                         className="radio w-5 h-5 checked:bg-[#3A5A40]"
                                                         {...register('etat')}
                                                     />
-                                                    <span className="label-text font-medium">terminee</span>
+                                                    <span className="label-text font-medium">termine</span>
                                                 </label>
                                             </div>
                                         </div>
