@@ -1,26 +1,9 @@
 import Projects from "../models/project.model.js";
 import { throwError } from "../utils/error.js";
 
-// export const createPost = async (req, res, next) => {
-//   if (req.user.id != req.body.userRef)
-//     return next(throwError(400, "Token Expired, Login for create post"));
-//   try {
-//     const post = await Listing.create(req.body);
-//     res.status(201).json(post);
-//   } catch (error) {
-//     next(error);
-//   }
-// };
+
 //===== Create Post =====//
 export const createProject = async (req, res, next) => {
-  /*if (req.user.role !== "admin") {
-    return next(throwError(403, "Only admins can create projects"));
-  }
-
-  if (req.user.id !== req.body.userRef) {
-    return next(throwError(400, "Token Expired, Login to create project"));
-  }*/
-
   try {
     const post = await Projects.create(req.body);
     res.status(201).json(post);

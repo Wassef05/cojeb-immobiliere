@@ -15,20 +15,24 @@ const ProjectSchema = new mongoose.Schema(
       type: String,
     },
     area: {
-      required: true,
+      required: false,
       type: Number,
     },
     furnished: {
-      required: true,
+      required: false,
       type: Boolean,
     },
     bureau: {
-      required: true,
+      required: false,
       type: Boolean,
     },
     parking: {
-      required: true,
+      required: false,
       type: Boolean,
+    },
+    specificity: {
+      required: true,
+      type: String,
     },
     imgUrl: {
       type: Array,
