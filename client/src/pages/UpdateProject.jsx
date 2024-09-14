@@ -11,6 +11,7 @@ import 'react-quill/dist/quill.snow.css';
 
 const UpdateProject = () => {
     const [content, setContent] = useState('');
+    const [specificity, setSpecificity] = useState('');
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -41,7 +42,6 @@ const UpdateProject = () => {
         mode: "onChange"
     });
 
-    //===Load Post informations here===//
     useEffect(() => {
 
         document.getElementById("admin").hidden=true;
@@ -77,6 +77,8 @@ const UpdateProject = () => {
     const setFeildValue = (data) => {
         setValue('title', data.title);
         setContent(data.description) ;
+        setSpecificity(data.specificity); 
+
         setValue('address', data.address);
         setValue('area', data.area && data.area);
         setValue('furnished', data.furnished);
@@ -119,7 +121,7 @@ const UpdateProject = () => {
             const storageRef = ref(storage, fileName);
             const uploadTask = uploadBytesResumable(storageRef, file);
 
-            //===Start Uploading===//
+            //Start Uploading
             uploadTask.on('state_changed',
                 (snapshot) => {
                     const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
@@ -158,6 +160,8 @@ const UpdateProject = () => {
                 body: JSON.stringify({
                     ...data,
                     description:content,
+                    specificity: specificity, // Ajout de la spécificité ici
+
                     imgUrl: formData.imgUrl,
                     userRef: currentUser._id
                 })
@@ -369,6 +373,15 @@ const UpdateProject = () => {
                                             </div>
                                         </div>
 
+                                        <ReactQuill 
+    id='specificity'
+    value={specificity}
+    onChange={setSpecificity}
+    className='form_input border-[1px]  focus:border-[#3A5A40] rounded-md placeholder:text-sm mt-3'
+    placeholder='Specificité'
+    modules={modules}
+    formats={formats}
+/>
 
 
                                         {/* === Image Uploading Section Start Here === */}

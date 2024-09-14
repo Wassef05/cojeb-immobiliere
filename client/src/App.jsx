@@ -10,6 +10,7 @@ import Homee from './pages/Homee'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import NavbarComp from './components/NavbarComp'
+import ErrorBoundary from './components/ErrorBoundary'; // Importer ErrorBoundary
 
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
       <BrowserRouter>
         <NavbarComp />
         {/* <Theme/> */}
+        <ErrorBoundary fallback={<p>Une erreur s'est produite. Veuillez réessayer plus tard.</p>}>
+
         <Routes>
           <Route path='/login' element={<Login />} />
           <Route path="/" element={<Homee />} />
@@ -37,6 +40,8 @@ function App() {
             <Route path='/update_project/:id' element={<UpdateProject />} />
           </Route>
         </Routes>
+        </ErrorBoundary>
+
       </BrowserRouter>
     </>
   )

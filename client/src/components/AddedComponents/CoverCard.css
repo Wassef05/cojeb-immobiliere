@@ -1,3 +1,4 @@
+/* Styles généraux pour tous les écrans */
 @font-face {
   font-family: 'Deutschlands';
   src: url('../../img/fonts/Deutschlands.ttf') format('truetype');
@@ -5,33 +6,23 @@
   font-style: normal;
 }
 
-/* Classe pour appliquer la police Deutshlands */
-.deutshlands-font {
+.deutschlands-font {
   font-family: 'Deutschlands', cursive;
 }
 
 .textDiv {
-  font-family: 'Deutschlands';
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%; /* Ensure it takes full height of the parent */
+  height: 100%; 
   text-align: center;
-  margin-left: -20px;
 }
 
 .textDiv h1 {
-  color: #3d3d3d; /* A clearer, more readable color */
-  font-size: 2.5rem !important;
-  font-family: 'Deutschlands' !important;
+  color: #3d3d3d; 
+  font-size: 2.5rem;
   font-weight: 600;
   line-height: 4rem;
-  /* text-shadow: 1px 1px 5px rgb(7, 7, 7);  */
-}
-
-
-.cursor {
-  animation: blink 1s step-end infinite;
 }
 
 @keyframes blink {
@@ -43,31 +34,43 @@
   }
 }
 
+.cursor {
+  animation: blink 1s step-end infinite;
+}
 
-/* Animation for text movement */
-@keyframes moveLeftToCenter {
-  0% {
-    transform: translateX(-100%); /* Start from off-screen left */
+/* Styles pour mobile */
+@media (max-width: 639px) {
+  .covercard {
+    width: 90%;
+    margin: 0 auto; 
   }
-  50% {
-    transform: translateX(0); /* Center horizontally */
+
+  .textDiv h1 {
+    font-size: 1.25rem; 
+    line-height: 1.75rem; 
   }
-  100% {
-    transform: translateX(0); /* Stay in center */
+
+  .bg-[#fff]/40 {
+    background: rgba(255, 255, 255, 0.85); 
+  }
+
+  .p-4 {
+    padding: 16px; 
   }
 }
 
-/* Apply the animation */
-.deutschlands-font {
-  animation: moveLeftToCenter 5s ease-in-out forwards;
-}
-
-/* Animation pour le clignotement du point */
-@keyframes typing-dot-blink {
-  0%, 50% {
-    opacity: 1;
+/* Styles pour tablette */
+@media (min-width: 640px) and (max-width: 767px) {
+  .textDiv h1 {
+    font-size: 2rem; 
+    line-height: 3rem;
   }
-  51%, 100% {
-    opacity: 0;
+
+  .covercard {
+    width: 80%;
+  }
+
+  .bg-[#fff]/40 {
+    background: rgba(255, 255, 255, 0.9);
   }
 }
