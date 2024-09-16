@@ -42,7 +42,7 @@
 @media (max-width: 639px) {
   .covercard {
     position: relative;
-    width: 100%;
+    width: 120%;
     height: 0; /* Occuper toute la hauteur de l'écran */
     display: flex;
     justify-content: center;
