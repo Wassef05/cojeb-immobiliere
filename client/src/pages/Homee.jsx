@@ -19,7 +19,7 @@ function Homee() {
   }, []);
 
   return (
-    <div className="App ">
+    <div className="App max-w-full overflow-x-hidden">
       <HomeHeader />
       <div>
         <ErrorBoundary fallback={<p>Oops! Erreur dans Card1</p>}>

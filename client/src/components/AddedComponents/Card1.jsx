@@ -35,7 +35,7 @@ export default function Card1() {
           >
             <div className="mb-12 sm:max-w-[50vw]">
              <h2
-  className="text-[#EB5E1A] font-semibold sm:text-4xl font-playfair mb-16  "
+  className="text-[#A95834]   font-averia font-bold text-5xl mb-16  "
   data-aos="fade-down"
 >
   A PROPOS DE NOUS
