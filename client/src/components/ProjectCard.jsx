@@ -6,8 +6,7 @@ import 'react-quill/dist/quill.snow.css';
 
 const ProjectCard = ({ projectInfo }) => {
   if (!projectInfo || !projectInfo.project) {
-    return <div>Project data is missing</div>; // Gestion des erreurs si `projectInfo` ou `project` est indéfini
-  }
+    return <div>Project data is missing</div>;
 
   const {
     address,

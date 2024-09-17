@@ -27,7 +27,6 @@ const ToutProjects = () => {
         );
       }
 
-       //===Load Data ===//
        useEffect(() => {
         (async () => {
             try {

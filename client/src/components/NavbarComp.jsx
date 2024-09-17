@@ -147,7 +147,7 @@ export default function NavbarComp() {
                     <Link
                       to="/searchProject?filter=terminee"
                       className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      onClick={handleDropdownToggle} // Fermer après clic
+                      onClick={handleDropdownToggle} 
                     >
                       Projets Réalisés
                     </Link>
@@ -156,7 +156,7 @@ export default function NavbarComp() {
                     <Link
                       to="/searchProject?filter=en cours"
                       className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      onClick={handleDropdownToggle} // Fermer après clic
+                      onClick={handleDropdownToggle} 
                     >
                       Projet En Cours
                     </Link>
@@ -165,7 +165,7 @@ export default function NavbarComp() {
                     <Link
                       to="/searchProject?filter=future"
                       className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      onClick={handleDropdownToggle} // Fermer après clic
+                      onClick={handleDropdownToggle} 
                     >
                       Futures projets
                     </Link>

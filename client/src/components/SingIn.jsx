@@ -21,7 +21,6 @@ const SingIn = () => {
 
 
 
-    //======handling form submting function =====//
     const onSubmit = async (formData) => {
         dispatch(loddingStart())
         try {
@@ -35,11 +34,9 @@ const SingIn = () => {
             const userData = await res.json();
             console.log(userData)
 
-            //===checking reqest success or not ===//
             if (userData.success === false) {
                 dispatch(signinFailed(userData.message))
 
-                //===showing error in tostify====//
                 toast.error(userData.message, {
                     autoClose: 2000,
                 })

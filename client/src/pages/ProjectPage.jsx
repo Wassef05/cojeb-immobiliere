@@ -57,7 +57,6 @@ const ProjectPage = () => {
     window.scrollTo(0, 0);
   }, [location]);
 
-  // Loading Project Data Here
   useEffect(() => {
     window.scrollTo(0, 0);
     (async () => {
@@ -76,7 +75,6 @@ const ProjectPage = () => {
     })();
   }, [params.id]);
 
-  //SLider Functions
   function SamplePrevArrow({ onClick }) {
     return (
       <div
@@ -113,7 +111,6 @@ const ProjectPage = () => {
     ),
   };
 
-  //Handling User Project DELETE
   const handleProjectDelete = async (projectId) => {
     try {
       const res = await fetch(`/api/projects/${projectId}`, {
@@ -139,7 +136,7 @@ const ProjectPage = () => {
     if (typeof url === "string" && url.length > numChars) {
       return url.slice(0, -numChars);
     }
-    return url; // Return original URL if it's shorter than or equal to numChars
+    return url; 
   }
   function isMp4(fileName) {
     console.log(fileName);
@@ -190,11 +187,7 @@ const ProjectPage = () => {
                 <div className="lg:col-span-7  ">
                   <div className="bg-white md:p-12 p-6 rounded-md shadow-sm shadow-[#3A5A40]">
                     <div className="property_info">
-                      {/* <p className='font-heading text-[#3A5A40]'>
-                                                    <span className='py-2 px-6 bg-[#3A5A40]/40 rounded-full border border-[#3A5A40] uppercase'>
-                                                        {type}
-                                                    </span>
-                                                </p> */}
+                  
 
                       <h1 className="font-heading font-bold mt-5 md:mt-8 text-2xl sm:text-3xl text-black capitalize">
                         {title}
@@ -216,7 +209,6 @@ const ProjectPage = () => {
                     </div>
                   </div>
 
-                  {/* Feature Content Section */}
 
                   <div
                     className={`property_details mt-8 bg-white rounded-md shadow-sm shadow-[#3A5A40] md:px-12 py-5 px-6 ${

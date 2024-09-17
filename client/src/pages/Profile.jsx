@@ -187,7 +187,6 @@ const Profile = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // setLoading(true)
     try {
       dispatch(loddingStart());
       const res = await fetch(`api/users/update/${currentUser._id}`, {
@@ -197,11 +196,9 @@ const Profile = () => {
       });
       const userData = await res.json();
 
-      //===checking reqest success or not ===//
       if (userData.success === false) {
         dispatch(userUpdateFailed(userData.message));
 
-        //===showing error in tostify====//
         toast.error(userData.message, {
           autoClose: 5000,
         });
@@ -226,11 +223,9 @@ const Profile = () => {
         method: "DELETE",
       });
       const resData = await res.json();
-      //===checking reqest success or not ===//
       if (resData.success === false) {
         dispatch(userDeleteFail(resData.message));
 
-        //===showing error in tostify====//
         toast.error(resData.message, {
           autoClose: 2000,
         });
@@ -266,7 +261,6 @@ const Profile = () => {
     }
   };
 
-  // ======Loading User Posts  =====//
 
   const loadProject = async () => {
     try {
@@ -326,9 +320,7 @@ const Profile = () => {
         method: "DELETE",
       });
       const resData = await res.json();
-      //===checking reqest success or not ===//
       if (resData.success === false) {
-        //===showing error in tostify====//
         toast.error(resData.message, {
           autoClose: 2000,
         });
@@ -349,9 +341,7 @@ const Profile = () => {
       });
       const data = await res.json();
 
-      //===checking reqest success or not ===//
       if (data.success === false) {
-        //===showing error in tostify====//
         toast.error(data.message, {
           autoClose: 2000,
         });
@@ -505,7 +495,6 @@ const Profile = () => {
             id="adminAdd"
             className="mt-5 md:mt-0 col-span-3 post_section profile_info p-2 flex flex-col   bg-transparent  w-full overflow-y-auto"
           >
-            {/*project items*/}
             <div id="Projects" className="">
               {userProjectLoading ? (
                 <div>
@@ -516,9 +505,8 @@ const Profile = () => {
                 </div>
               ) : (
                 <div>
-                  {/*search*/}
                   <div className="">
-                    <form /*onSubmit={handleSubmit1}*/>
+                    <form >
                       <div className="grid grid-cols-6">
                         <div className="col-span-2">
                           <p className="text-lg font-heading "> type:</p>

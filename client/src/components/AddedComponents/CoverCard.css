@@ -38,16 +38,15 @@
   animation: blink 1s step-end infinite;
 }
 
-/* Styles pour mobile */
 @media (max-width: 639px) {
   .covercard {
     position: relative;
     width: 120%;
-    height: 0; /* Occuper toute la hauteur de l'écran */
+    height: 0; 
     display: flex;
     justify-content: center;
-    align-items: flex-end; /* Aligner le contenu en bas de l'écran */
-    padding-bottom: 0; /* Espace avec le bas */
+    align-items: flex-end; 
+    padding-bottom: 0; 
     margin-left: -15px;
   }
   .textDiv h1 {

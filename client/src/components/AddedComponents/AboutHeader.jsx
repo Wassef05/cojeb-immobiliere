@@ -106,21 +106,7 @@ const AboutHeader = () => {
           <h2 className="sm:text-4xl uppercase text-3xl font-bold mb-6">
             A propos
           </h2>
-          {/* <Breadcrumb
-            className="text-white"
-            aria-label="Default breadcrumb example"
-          >
-            <Breadcrumb.Item
-              href="/"
-              icon={() => <HiHome className="text-white text-xl mr-2" />}
-              className="text-white"
-            >
-              <div className="text-white text-xl">Accueil</div>
-            </Breadcrumb.Item>
-            <Breadcrumb.Item className="text-white">
-              <div className="text-white text-xl">A propos</div>
-            </Breadcrumb.Item>
-          </Breadcrumb> */}
+        
         </div>
       </div>
       <div className="grid items-center justify-center -mt-10 mb-14 mx-auto max-w-[70vw] sm:max-w-[80vw] lg:grid-cols-3 gap-4 z-20 relative lg:left-16 max-lg:px-4">

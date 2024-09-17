@@ -5,7 +5,7 @@ import cov from '../../img/card1.png';
 
 export default function Card1() {
   useEffect(() => {
-    AOS.init({ duration: 1200 }); // Initialize AOS and set animation duration
+    AOS.init({ duration: 1200 }); 
   }, []);
 
   return (

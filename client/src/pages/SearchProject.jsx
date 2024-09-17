@@ -130,7 +130,6 @@ const SearchProject = () => {
 </div>
 
 
-                                    {/* Amenities Section */}
                                     <div className="amenities_container mb-4">
                                         <p className='text-lg font-bold mb-2'>Amenities:</p>
                                         <div className="control grid grid-cols-2 gap-2">

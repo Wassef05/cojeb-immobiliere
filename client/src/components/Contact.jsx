@@ -14,7 +14,7 @@ const Contact = ({ listing }) => {
     const [sending, setSending] = useState(false)
     const [messageSendSuccess, setMessageSendSuccess] = useState(false)
 
-    // =====Load Property Owner Data =====//
+    // =====Load Property Owner Data
     useEffect(() => {
         (async () => {
             setLoading(true)
@@ -52,7 +52,7 @@ const Contact = ({ listing }) => {
                 body: JSON.stringify(conversationApiData)
             });
             const json = await res.json();
-            //===checking reqest success or not ===//
+            //checking reqest success or not
             if (json.success === false) {
                 setResponseMsg("Message sending failed. Try again!")
                 setSending(false)
@@ -71,7 +71,7 @@ const Contact = ({ listing }) => {
                     )
                 });
                 const msgJson = await resMsg.json();
-                //===checking Message request success or not ===//
+                //checking Message request success or not 
                 if (msgJson.success === false) {
                     setResponseMsg("Message sending failed. Try again!")
                     setSending(false)

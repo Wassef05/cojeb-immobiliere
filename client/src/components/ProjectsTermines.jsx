@@ -28,7 +28,7 @@ const TermineeProjects = () => {
   }
 
   useEffect(() => {
-    AOS.init({ duration: 1000 }); // Initialize AOS with duration
+    AOS.init({ duration: 1000 }); 
   }, []);
 
   useEffect(() => {

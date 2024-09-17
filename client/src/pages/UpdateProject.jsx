@@ -121,7 +121,6 @@ const UpdateProject = () => {
             const storageRef = ref(storage, fileName);
             const uploadTask = uploadBytesResumable(storageRef, file);
 
-            //Start Uploading
             uploadTask.on('state_changed',
                 (snapshot) => {
                     const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
@@ -160,7 +159,7 @@ const UpdateProject = () => {
                 body: JSON.stringify({
                     ...data,
                     description:content,
-                    specificity: specificity, // Ajout de la spécificité ici
+                    specificity: specificity, 
 
                     imgUrl: formData.imgUrl,
                     userRef: currentUser._id
@@ -188,7 +187,7 @@ const UpdateProject = () => {
     const modules = {
         toolbar: [
           [{ 'font': [] }, { 'size': [] }],
-          ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+          ['bold', 'italic', 'underline', 'strike'],       
           [{ 'list': 'ordered'}, { 'list': 'bullet' }],
           [{ 'align': [] }],
           ['link', 'image'],
@@ -225,7 +224,6 @@ const UpdateProject = () => {
 
 
 
-                                        {/* ====== Form Sections Start Form Here ===== */}
                                         <div className="info_container">
                                             <div className="input_feilds">
 

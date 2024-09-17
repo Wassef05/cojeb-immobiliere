@@ -7,15 +7,12 @@ import iwebsite from "../../img/webe.png";
 export default function Contact() {
   return (
     <div className="flex flex-col items-center justify-center w-full">
-      {/* Centrer le titre au milieu de l'écran */}
       <h1 className="text-[#A95834] pt-10 font-averia font-bold text-5xl text-center mb-8">
         CONTACT
       </h1>
 
-      {/* Grid pour les cartes de contact */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full text-center justify-center items-center">
 
-        {/* E-mail */}
         <div className="py-3.5 text-base w-[80vw] sm:w-[45vw] lg:w-[20vw] m-auto h-[130px] bg-gradient-to-r from-gray-300 to-gray-400 rounded-3xl shadow-lg shadow-black">
           <img src={iemail} className="w-10 h-8 m-auto mb-1" alt="email icon"/>
           <div className="text-center font-bold">
@@ -24,7 +21,6 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Téléphone */}
         <div className="py-3.5 text-base w-[80vw] sm:w-[45vw] lg:w-[20vw] m-auto h-[130px] bg-gradient-to-r from-gray-300 to-gray-400 rounded-3xl shadow-lg shadow-black">
           <img src={iphone} className="w-8 h-8 m-auto mb-1" alt="phone icon"/>
           <div className="text-center font-bold">
@@ -42,7 +38,6 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Adresse */}
         <div className="py-3.5 text-base w-[80vw] sm:w-[45vw] lg:w-[20vw] m-auto h-[130px] bg-gradient-to-r from-gray-300 to-gray-400 rounded-3xl shadow-lg shadow-black">
           <img src={ilocation} className="w-8 h-8 m-auto mb-1" alt="location icon"/>
           <div className="text-center font-bold">

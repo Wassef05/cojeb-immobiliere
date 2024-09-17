@@ -27,7 +27,6 @@ const Projects = () => {
         );
       }
 
-       //===Load Data ===//
        useEffect(() => {
         (async () => {
             try {

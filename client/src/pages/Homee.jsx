@@ -11,7 +11,7 @@ import EnCoursProjects from "../components/ProjectsEnCours";
 import StateCard from "../components/AddedComponents/StateCardAbout";
 import ProjetFuture from "../components/ProjetFuture";
 import { useEffect } from 'react';
-import ErrorBoundary from '../components/ErrorBoundary'; // Importer ErrorBoundary
+import ErrorBoundary from '../components/ErrorBoundary'; 
 
 function Homee() {
   useEffect(() => {

@@ -5,18 +5,11 @@ import { useEffect } from 'react';
 import 'react-quill/dist/quill.snow.css';
 
 
-// function truncateText(text, maxLength) {
-//     if (text.length <= maxLength) {
-//       return text;
-//     }
-//     return text.substring(0, maxLength) + '...';
-//   }
 
 const ProjectListingCard = ({ project }) => {
 
 
     const navigate = useNavigate();
-    // const maxLength = 50; // Adjust the maximum length as needed
 
     const { title, address, area, etat,discountPrice, imgUrl, offer, price, type,description , _id } = project;
 

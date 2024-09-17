@@ -27,13 +27,11 @@ const EnCoursProjects = () => {
     );
   }
 
-  // Initialize AOS
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
   const itemCount = 3;
 
-  // Load Data
   useEffect(() => {
     (async () => {
       try {

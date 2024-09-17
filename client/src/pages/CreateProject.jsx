@@ -91,7 +91,6 @@ const CreateProject = () => {
       const storageRef = ref(storage, fileName);
       const uploadTask = uploadBytesResumable(storageRef, file);
 
-      //===Start Uploading===//
       uploadTask.on(
         "state_changed",
         (snapshot) => {
@@ -135,8 +134,8 @@ const CreateProject = () => {
           },
           body: JSON.stringify({
             ...data,
-            description: description,  // Envoyer la description
-            specificity: specificity,  // Envoyer la spécificité
+            description: description,  
+            specificity: specificity,  
             imgUrl: formData.imgUrl,
             userRef: currentUser._id,
           }),
@@ -164,7 +163,7 @@ const CreateProject = () => {
   const modules = {
     toolbar: [
       [{ font: [] }, { size: [] }],
-      ["bold", "italic", "underline", "strike"], // toggled buttons
+      ["bold", "italic", "underline", "strike"], 
       [{ list: "ordered" }, { list: "bullet" }],
       [{ align: [] }],
       ["link", "image"],
@@ -196,7 +195,7 @@ const CreateProject = () => {
           <div className="mt-8 form_container">
             <form onSubmit={handleSubmit(handleFormSubmit)}>
               <div className="feilds_container grid gap-5 md:gap-10  grid-col-1 md:grid-cols-2 items-start  ">
-                {/* ====== Form Sections Start Form Here ===== */}
+                
                 <div className="info_container">
                   <div className="input_feilds">
                     <input
@@ -306,7 +305,6 @@ const CreateProject = () => {
                       </div>
                     </div>
 
-                    {/* Remplacez ce bloc de code */}
                     <div className="cd_info mt-3">
     <p className='font-heading text-black'> Informations Générales</p>
     <div className="max-w-[200px] flex items-center justify-between gap-2 mt-2">
@@ -376,7 +374,6 @@ const CreateProject = () => {
                   </div>
                 </div>
 
-                {/* === Image Uploading Section Start Here === */}
                 <div>
                   <p className="font-content text-[16px] mb-3 font-normal text-black">
                     <span className="font-semibold mr-1">Note:</span>

@@ -5,12 +5,12 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   server: {
     host: true, // ou '0.0.0.0'
-    port: process.env.PORT || 5173, // Port fourni par Render ou 5173 par défaut
+    port: process.env.PORT || 5173, 
     strictPort: true, // Important pour forcer Vite à utiliser ce port
     proxy: {
       '/api': {
-        target: 'https://cojeb-immobiliere-api.vercel.app',
-        changeOrigin: true, // Ajouté pour éviter les problèmes de CORS
+        target: 'https://cogeb-immobiliere-api.onrender.com',
+        changeOrigin: true, 
         secure: false,
       },
     },

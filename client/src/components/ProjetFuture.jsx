@@ -27,12 +27,10 @@ export default function ProjetFuture() {
       );
     }
   
-    // Initialize AOS
     useEffect(() => {
       AOS.init({ duration: 1000 });
     }, []);
   
-    // Load Data
     useEffect(() => {
       (async () => {
         try {
