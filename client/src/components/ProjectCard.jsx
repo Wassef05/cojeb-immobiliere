@@ -6,7 +6,8 @@ import 'react-quill/dist/quill.snow.css';
 
 const ProjectCard = ({ projectInfo }) => {
   if (!projectInfo || !projectInfo.project) {
-    return <div>Project data is missing</div>;
+    return <div>Project data is missing</div>; 
+  }
 
   const {
     address,

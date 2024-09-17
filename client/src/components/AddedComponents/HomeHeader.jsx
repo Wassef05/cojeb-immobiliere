@@ -35,7 +35,7 @@ export default function HomeHeader() {
                 className="w-full h-screen bg-center bg-no-repeat bg-cover"
                 style={{
                   backgroundImage: `url(${slide})`,
-                  backgroundSize: 'cover', 
+                  backgroundSize: '90%', 
                   backgroundPosition: 'center',
                 }}
               ></div>
