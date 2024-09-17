@@ -9,7 +9,7 @@ export default defineConfig({
     strictPort: true, // Important pour forcer Vite à utiliser ce port
     proxy: {
       '/api': {
-        target: 'http://localhost:4000',
+        target: 'https://cojeb-immobiliere-api.vercel.app',
         changeOrigin: true, // Ajouté pour éviter les problèmes de CORS
         secure: false,
       },
