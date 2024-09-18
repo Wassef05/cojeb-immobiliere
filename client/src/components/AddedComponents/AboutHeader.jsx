@@ -37,10 +37,7 @@ const AboutHeader = () => {
         {/* Adjust -mt-24 for the vertical placement above the image */}
         <StateCard />
       </div>
-      <div className="relative z-20 -mt-24 mb-16 flex justify-center items-center">
-        {/* Adjust -mt-24 for the vertical placement above the image */}
-        <StateCard />
-      </div>
+
       <div className="grid items-center justify-center mb-16 mx-auto max-w-[70vw] sm:max-w-[80vw] lg:grid-cols-3 gap-4 z-20 relative lg:left-16 max-lg:px-4">
         <div
           className="flex flex-auto items-center justify-center"
