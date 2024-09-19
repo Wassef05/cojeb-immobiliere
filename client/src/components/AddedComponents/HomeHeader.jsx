@@ -32,7 +32,7 @@ export default function HomeHeader() {
           {slides.map((slide, index) => (
             <div key={index} className="w-full h-full">
               <div
-                className="w-full h-screen bg-center bg-no-repeat bg-contain"
+                className="w-full h-screen bg-center bg-no-repeat bg-contain "
                 style={{
                   backgroundImage: `url(${slide})`,
                   backgroundSize: '90%', 

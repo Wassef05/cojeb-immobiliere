@@ -20,7 +20,11 @@ export default function NavbarComp() {
   const handleToggle = () => {
     setToggle(!toggle);
   };
-
+  // Fermer le menu mobile après le clic sur un lien
+  const handleLinkClick = () => {
+    setToggle(false);
+    setIsDropdownOpen(false); // Fermer également le dropdown s'il est ouvert
+  };
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPosition = window.scrollY;
@@ -107,12 +111,12 @@ export default function NavbarComp() {
           </button>
         </div>
 
-        <Navbar.Collapse className={`w-full flex-col md:flex-row md:w-auto md:items-center ml-32  ${toggle ? "block bg-gray-300/100 text-black pt-4 " : "hidden md:flex"}`}>
-          <NavLink className={navlinkStyles} to="/" end>
+        <Navbar.Collapse className={`w-full flex-col md:flex-row md:w-auto md:items-center ml-32  ${toggle ? "block bg-white/90 p-6 rounded-3xl text-black pt-4 " : "hidden md:flex"}`}>
+          <NavLink className={navlinkStyles} to="/" end  onClick={handleLinkClick}>
             ACCUEIL
           </NavLink>
 
-          <NavLink className={navlinkStyles} to="/about">
+          <NavLink className={navlinkStyles} to="/about" onClick={handleLinkClick}>
             A PROPOS
           </NavLink>
 
@@ -147,7 +151,7 @@ export default function NavbarComp() {
                     <Link
                       to="/searchProject?filter=terminee"
                       className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      onClick={handleDropdownToggle} 
+                      onClick={handleLinkClick}                      
                     >
                       Projets Réalisés
                     </Link>
@@ -156,8 +160,7 @@ export default function NavbarComp() {
                     <Link
                       to="/searchProject?filter=en cours"
                       className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      onClick={handleDropdownToggle} 
-                    >
+                      onClick={handleLinkClick}                    >
                       Projet En Cours
                     </Link>
                   </li>
@@ -165,8 +168,7 @@ export default function NavbarComp() {
                     <Link
                       to="/searchProject?filter=future"
                       className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      onClick={handleDropdownToggle} 
-                    >
+                      onClick={handleLinkClick}y                    >
                       Futures projets
                     </Link>
                   </li>
