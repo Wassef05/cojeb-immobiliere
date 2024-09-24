@@ -9,7 +9,9 @@ export default defineConfig({
     strictPort: true, // Important pour forcer Vite à utiliser ce port
     proxy: {
       '/api': {
-        target: 'https://cogeb-immobiliere-api.onrender.com',
+        // target: 'https://cogeb-immobiliere-api.onrender.com',
+        target: 'http://localhost:4000',
+
         changeOrigin: true, 
         secure: false,
       },
