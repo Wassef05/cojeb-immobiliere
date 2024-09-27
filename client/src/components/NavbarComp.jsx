@@ -11,30 +11,33 @@ export default function NavbarComp() {
   const [toggle, setToggle] = useState(false);
   const { currentUser } = useSelector((state) => state.user);
   const [scrollPosition, setScrollPosition] = useState(0);
-  const [lastScrollPosition, setLastScrollPosition] = useState(0);
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [navbarBackground, setNavbarBackground] = useState("bg-transparent");
 
-  const dropdownRef = useRef(null); // Utilisé pour détecter les clics en dehors du dropdown
+  const dropdownRef = useRef(null);
 
   const handleToggle = () => {
     setToggle(!toggle);
   };
-  // Fermer le menu mobile après le clic sur un lien
+
   const handleLinkClick = () => {
     setToggle(false);
-    setIsDropdownOpen(false); // Fermer également le dropdown s'il est ouvert
+    setIsDropdownOpen(false);
   };
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPosition = window.scrollY;
-      if (currentScrollPosition > lastScrollPosition) {
-        setIsNavbarVisible(false); // Cacher la navbar lorsqu'on défile vers le bas
-      } else {
-        setIsNavbarVisible(true); // Afficher la navbar lorsqu'on défile vers le haut
-      }
-      setLastScrollPosition(currentScrollPosition);
       setScrollPosition(currentScrollPosition);
+
+      if (currentScrollPosition > 0) {
+        setNavbarBackground(" bg-white-100/100 backdrop-blur-md"); // Changer de background
+      } else {
+        setNavbarBackground("bg-transparent"); // Rétablir la transparence
+      }
+
+      setIsNavbarVisible(currentScrollPosition < scrollPosition);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -42,9 +45,8 @@ export default function NavbarComp() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [lastScrollPosition]);
+  }, [scrollPosition]);
 
-  // Ouvrir le dropdown au clic ou au survol
   const handleDropdownToggle = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
@@ -57,7 +59,6 @@ export default function NavbarComp() {
     setIsDropdownOpen(false);
   };
 
-  // Fermer le dropdown si on clique en dehors
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -82,17 +83,13 @@ export default function NavbarComp() {
     <Navbar
       fluid
       rounded
-      className={`fixed top-0 left-0 right-0 rounded-lg justify-between w-full z-50 bg-transparent transition-transform duration-300 ${
-        scrollPosition > 0 ? (isNavbarVisible ? 'translate-y-0 bg-white-800/50' : '-translate-y-full') : 'mt-0'
-      }`}
+      className={`fixed top-0 left-0 right-0 rounded-lg justify-between w-full z-50 transition-transform duration-300 ${navbarBackground} ${isNavbarVisible ? 'translate-y-0' : '-translate-y-full'}`}
     >
       <div className="flex flex-wrap rounded-lg md:flex-nowrap pb-6 w-full items-center justify-between">
         <Navbar.Brand href="/">
           <img
             src={logo}
-            className={`fixed mr-3 h-20 mt-6 sm:h-36 md:h-40 lg:h-24 ml-6 transition-transform duration-300 ${
-              scrollPosition > 0 ? (isNavbarVisible ? 'translate-y-0' : '-translate-y-full') : 'mt-0'
-            }`}
+            className={`fixed mr-3 h-20 mt-6 sm:h-36 md:h-40 lg:h-24 ml-6 transition-transform duration-300 ${scrollPosition > 0 ? 'translate-y-0' : 'mt-0'}`}
             alt="nom"
           />
         </Navbar.Brand>
@@ -112,7 +109,7 @@ export default function NavbarComp() {
         </div>
 
         <Navbar.Collapse className={`w-full flex-col md:flex-row md:w-auto md:items-center ml-32  ${toggle ? "block bg-white/90 p-6 rounded-3xl text-black pt-4 " : "hidden md:flex"}`}>
-          <NavLink className={navlinkStyles} to="/" end  onClick={handleLinkClick}>
+          <NavLink className={navlinkStyles} to="/" end onClick={handleLinkClick}>
             ACCUEIL
           </NavLink>
 
@@ -120,7 +117,6 @@ export default function NavbarComp() {
             A PROPOS
           </NavLink>
 
-          {/* Dropdown "NOS PROJETS" avec clic et survol */}
           <div
             className="relative"
             onMouseEnter={handleMouseEnter}
@@ -143,7 +139,6 @@ export default function NavbarComp() {
               </svg>
             </span>
 
-            {/* Afficher le dropdown si isDropdownOpen est vrai */}
             {isDropdownOpen && (
               <div className="absolute z-50 bg-white divide-y divide-gray-100 rounded-lg shadow w-72 dark:bg-gray-700">
                 <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
@@ -151,7 +146,7 @@ export default function NavbarComp() {
                     <Link
                       to="/searchProject?filter=terminee"
                       className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      onClick={handleLinkClick}                      
+                      onClick={handleLinkClick}
                     >
                       Projets Réalisés
                     </Link>
@@ -160,7 +155,8 @@ export default function NavbarComp() {
                     <Link
                       to="/searchProject?filter=en cours"
                       className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      onClick={handleLinkClick}                    >
+                      onClick={handleLinkClick}
+                    >
                       Projet En Cours
                     </Link>
                   </li>
@@ -168,7 +164,8 @@ export default function NavbarComp() {
                     <Link
                       to="/searchProject?filter=future"
                       className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      onClick={handleLinkClick}y                    >
+                      onClick={handleLinkClick}
+                    >
                       Futures projets
                     </Link>
                   </li>

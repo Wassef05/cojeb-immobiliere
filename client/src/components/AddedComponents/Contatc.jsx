@@ -6,45 +6,47 @@ import iwebsite from "../../img/webe.png";
 
 export default function Contact() {
   return (
-    <div className="flex flex-col items-center justify-center w-full">
-      <h1 className="text-[#A95834] pt-10 font-averia font-bold text-5xl text-center mb-8">
+    <div className="flex flex-col items-center justify-center w-full p-4">
+      <h1 className="text-[#A95834] pt-6 font-averia font-bold text-4xl sm:text-5xl text-center mb-6">
         CONTACT
       </h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full text-center justify-center items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-5xl text-center justify-center items-center">
 
-        <div className="py-3.5 text-base w-[80vw] sm:w-[45vw] lg:w-[20vw] m-auto h-[130px] bg-gradient-to-r from-gray-300 to-gray-400 rounded-3xl shadow-lg shadow-black">
-          <img src={iemail} className="w-10 h-8 m-auto mb-1" alt="email icon"/>
+        <div className="py-4 text-base w-full max-w-xs sm:max-w-sm m-auto h-auto bg-gradient-to-r from-gray-300 to-gray-400 rounded-2xl shadow-lg">
+          <img src={iemail} className="w-10 h-8 m-auto mb-2" alt="email icon" />
           <div className="text-center font-bold">
             <h3 className="text-black">E-mail</h3>
-            <p className="text-black">contact@cogebimmobiliere.com</p>
+            <p className="text-black text-sm sm:text-base">contact@cogeb-immobiliere.com</p>
           </div>
         </div>
 
-        <div className="py-3.5 text-base w-[80vw] sm:w-[45vw] lg:w-[20vw] m-auto h-[130px] bg-gradient-to-r from-gray-300 to-gray-400 rounded-3xl shadow-lg shadow-black">
-          <img src={iphone} className="w-8 h-8 m-auto mb-1" alt="phone icon"/>
+        <div className="py-4 text-base w-full max-w-xs sm:max-w-sm m-auto h-auto bg-gradient-to-r from-gray-300 to-gray-400 rounded-2xl shadow-lg">
+          <img src={iphone} className="w-8 h-8 m-auto mb-2" alt="phone icon" />
           <div className="text-center font-bold">
             <h3 className="text-black">TELEPHONE</h3>
-            <p className="text-black">+216 73 323 435</p>
+            <p className="text-black text-sm sm:text-base">+216 73 323 435</p>
           </div>
         </div>
 
-        {/* Site Web */}
-        <div className="py-3.5 text-base w-[80vw] sm:w-[45vw] lg:w-[20vw] m-auto h-[130px] bg-gradient-to-r from-gray-300 to-gray-400 rounded-3xl shadow-lg shadow-black">
-          <img src={iwebsite} className="w-8 h-8 m-auto mb-1" alt="website icon"/>
+        <div className="py-4 text-base w-full max-w-xs sm:max-w-sm m-auto h-auto bg-gradient-to-r from-gray-300 to-gray-400 rounded-2xl shadow-lg">
+          <img src={iwebsite} className="w-8 h-8 m-auto mb-2" alt="website icon" />
           <div className="text-center font-bold">
             <h3 className="text-black">Site Web</h3>
-            <p className="text-black">Cogeb-immobiliére.com</p>
+            <p className="text-black text-sm sm:text-base">Cogeb-immobiliére.com</p>
           </div>
         </div>
 
-        <div className="py-3.5 text-base w-[80vw] sm:w-[45vw] lg:w-[20vw] m-auto h-[130px] bg-gradient-to-r from-gray-300 to-gray-400 rounded-3xl shadow-lg shadow-black">
-          <img src={ilocation} className="w-8 h-8 m-auto mb-1" alt="location icon"/>
+        <div className="py-4 text-base w-full max-w-xs sm:max-w-sm m-auto h-auto bg-gradient-to-r from-gray-300 to-gray-400 rounded-2xl shadow-lg">
+          <img src={ilocation} className="w-8 h-8 m-auto mb-2" alt="location icon" />
           <div className="text-center font-bold">
             <h3 className="text-black">Adresse</h3>
-            <p className="text-black">Avenue de l'environnement, Sousse, Tunisia, 4000</p>
+            <p className="text-black text-sm sm:text-base">
+              Avenue de l'environnement, Sousse, Tunisia, 4000
+            </p>
           </div>
         </div>
+
       </div>
     </div>
   );

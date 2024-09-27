@@ -55,7 +55,7 @@ export default function ContactHeader() {
           <img src={iwebsite} className="w-8 h-8 m-auto"/>
           </div>
           <h4 className="text-gray-800 text-base font-bold mt-4">Discutez avec nous</h4>
-          <p className="text-sm text-gray-600 mt-2">www.Cogebimmobiliere.com</p>
+          <p className="text-sm text-gray-600 mt-2">www.Cogeb-immobiliere.com</p>
         </div>
       </div>
     </div>
