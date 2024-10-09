@@ -70,8 +70,8 @@ const EnCoursProjects = () => {
           padding: "10px",
         }}
       >
-        {dots.slice(0, 5)}
-        {dots.length > 5 && <li className="justify:center  "></li>}
+        {dots.slice(0, 4)}
+        {/* {dots.length > 5 && <li className="justify:center  "></li>} */}
       </ul>
     ),
     responsive: [
